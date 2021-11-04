@@ -32,6 +32,8 @@ class NavHome extends StatelessWidget {
             //menu
             menuAplikasi,
             const Padding(padding: EdgeInsets.only(top: 20.0)),
+
+
           ],
         ),
       ),

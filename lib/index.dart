@@ -6,7 +6,6 @@ import 'package:my_app/chat.dart';
 import 'package:my_app/home.dart';
 import 'package:my_app/profil.dart';
 import 'package:my_app/search.dart';
-import 'package:page_transition/page_transition.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);
@@ -55,9 +54,12 @@ class _MainState extends State<MainApp> {
       //     )
       //   ],
       // ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: SafeArea(
+        child: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
       ),
+
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: const Color.fromRGBO(250, 255, 251, 1),
