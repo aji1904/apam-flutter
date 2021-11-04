@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 // import 'package:responsive_ui/responsive_ui.dart';
 
@@ -32,8 +33,9 @@ class NavHome extends StatelessWidget {
             //menu
             menuAplikasi,
             const Padding(padding: EdgeInsets.only(top: 20.0)),
-
-
+            spaceCarousel,
+            carouselWidget,
+            const Padding(padding: EdgeInsets.only(top: 20.0)),
           ],
         ),
       ),
@@ -84,7 +86,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color:Color.fromRGBO(250, 255, 251, 1),
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -570,7 +572,7 @@ Widget riwayatPerawatan = Row(
     Expanded(
       child: Container(
         decoration: const BoxDecoration(
-          color:Color.fromRGBO(250, 255, 251, 1),
+          color: Color.fromRGBO(250, 255, 251, 1),
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           boxShadow: [
             BoxShadow(
@@ -616,4 +618,57 @@ Widget riwayatPerawatan = Row(
       ),
     )
   ],
+);
+
+Widget carouselWidget = CarouselSlider(
+  options: CarouselOptions(
+    height: 200,
+    aspectRatio: 16 / 9,
+    viewportFraction: 0.8,
+    initialPage: 0,
+    enableInfiniteScroll: true,
+    reverse: false,
+    autoPlay: true,
+    autoPlayInterval: const Duration(seconds: 3),
+    autoPlayAnimationDuration: const Duration(milliseconds: 800),
+    autoPlayCurve: Curves.fastOutSlowIn,
+    enlargeCenterPage: true,
+    scrollDirection: Axis.horizontal,
+  ),
+  items: [1, 2, 3, 4, 5].map((i) {
+    return Builder(
+      builder: (BuildContext context) {
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          margin: const EdgeInsets.symmetric(horizontal: 5.0),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
+            ),
+            color: Color.fromRGBO(76, 217, 116, 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(3.0, 7.0),
+                blurRadius: 10,
+                spreadRadius: -2,
+              )
+            ],
+          ),
+          child: Text(
+            'text $i',
+            style: const TextStyle(fontSize: 16.0),
+          ),
+        );
+      },
+    );
+  }).toList(),
+);
+
+Widget spaceCarousel = const Padding(
+  padding: EdgeInsets.only(top: 20.0, bottom: 10.0),
+  child: Text(
+    'Panduan Penggunaan',
+    style: TextStyle(fontWeight: FontWeight.bold),
+  ),
 );
