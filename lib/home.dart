@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart';
+
 // import 'package:responsive_ui/responsive_ui.dart';
 
 class NavHome extends StatelessWidget {
@@ -17,7 +19,9 @@ class NavHome extends StatelessWidget {
         child: Column(
           children: <Widget>[
             // Daftar Mandiri
-            const Padding(padding: EdgeInsets.only(top: 20.0)),
+            const Padding(padding: EdgeInsets.only(top: 10.0)),
+            navbarApp,
+            const Padding(padding: EdgeInsets.only(top: 10.0)),
             cardPendaftaranMandiri,
             // Space
             spaceRiwayat,
@@ -35,6 +39,33 @@ class NavHome extends StatelessWidget {
   }
 }
 
+get onPressed => null;
+
+Widget navbarApp = Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    const Text(
+      'My App',
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    Badge(
+      badgeContent:
+          const Text('10', style: TextStyle(color: Colors.white, fontSize: 8)),
+      child: IconButton(
+          onPressed: onPressed,
+          icon: const Icon(
+            Icons.notifications,
+            color: Color.fromRGBO(44, 208, 72, 1),
+          )),
+      badgeColor: Colors.red.shade400,
+      position: BadgePosition.topEnd(end: 3, top: 8),
+    ),
+  ],
+);
+
 Widget menuAplikasi = Column(
   children: [
     Row(
@@ -51,7 +82,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color:Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -82,7 +113,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -107,7 +138,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -139,7 +170,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -164,7 +195,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -195,7 +226,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -232,7 +263,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -263,7 +294,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -288,7 +319,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -319,7 +350,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -344,7 +375,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -375,7 +406,7 @@ Widget menuAplikasi = Column(
                       borderRadius: BorderRadius.all(
                         Radius.circular(20.0),
                       ),
-                      color: Colors.white,
+                      color: Color.fromRGBO(250, 255, 251, 1),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey,
@@ -486,7 +517,7 @@ Widget riwayatPerawatan = Row(
     Expanded(
       child: Container(
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: Color.fromRGBO(250, 255, 251, 1),
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           boxShadow: [
             BoxShadow(
@@ -537,7 +568,7 @@ Widget riwayatPerawatan = Row(
     Expanded(
       child: Container(
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color:Color.fromRGBO(250, 255, 251, 1),
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           boxShadow: [
             BoxShadow(

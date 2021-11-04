@@ -14,7 +14,7 @@ void main() => runApp(
           primaryColor: Colors.grey[800],
         ),
         home: AnimatedSplashScreen(
-          duration: 3000,
+          duration: 2000,
           splash: "assets/images/logo.png",
           nextScreen: const MainApp(),
           splashTransition: SplashTransition.slideTransition,
