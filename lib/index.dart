@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
-// import 'package:badges/badges.dart';
-import 'package:my_app/chat.dart';
+// import 'package:my_app/chat.dart';
 import 'package:my_app/home.dart';
 import 'package:my_app/profil.dart';
 import 'package:my_app/search.dart';
@@ -15,11 +14,11 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainState extends State<MainApp> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   static const List<Widget> _widgetOptions = <Widget>[
     NavHome(),
-    ChatApp(),
+    // ChatApp(),
     SearchApp(),
     ProfilApp(),
   ];
@@ -88,10 +87,10 @@ class _MainState extends State<MainApp> {
                   icon: LineIcons.home,
                   text: 'Home',
                 ),
-                GButton(
-                  icon: LineIcons.comments,
-                  text: 'Chat',
-                ),
+                // GButton(
+                //   icon: LineIcons.comments,
+                //   text: 'Chat',
+                // ),
                 GButton(
                   icon: LineIcons.search,
                   text: 'Cari',

@@ -643,7 +643,7 @@ Widget carouselWidget = CarouselSlider(
           margin: const EdgeInsets.symmetric(horizontal: 5.0),
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(
-              Radius.circular(20.0),
+              Radius.circular(10.0),
             ),
             color: Color.fromRGBO(76, 217, 116, 1),
             boxShadow: [
@@ -666,7 +666,7 @@ Widget carouselWidget = CarouselSlider(
 );
 
 Widget spaceCarousel = const Padding(
-  padding: EdgeInsets.only(top: 20.0, bottom: 10.0),
+  padding: EdgeInsets.only(bottom: 10.0),
   child: Text(
     'Panduan Penggunaan',
     style: TextStyle(fontWeight: FontWeight.bold),
