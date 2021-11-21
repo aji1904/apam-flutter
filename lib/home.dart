@@ -10,34 +10,27 @@ class NavHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.amberAccent,
-      margin: const EdgeInsets.only(
-        left: 20.0,
-        right: 20.0,
-      ),
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            // Daftar Mandiri
-            const Padding(padding: EdgeInsets.only(top: 10.0)),
-            navbarApp,
-            const Padding(padding: EdgeInsets.only(top: 10.0)),
-            cardPendaftaranMandiri,
-            // Space
-            spaceRiwayat,
-            // riwayat rawat
-            riwayatPerawatan,
-            //space
-            spaceMenu,
-            //menu
-            menuAplikasi,
-            const Padding(padding: EdgeInsets.only(top: 20.0)),
-            spaceCarousel,
-            carouselWidget,
-            const Padding(padding: EdgeInsets.only(top: 20.0)),
-          ],
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          // Daftar Mandiri
+          const Padding(padding: EdgeInsets.only(top: 10.0)),
+          navbarApp,
+          const Padding(padding: EdgeInsets.only(top: 10.0)),
+          cardPendaftaranMandiri,
+          // Space
+          spaceRiwayat,
+          // riwayat rawat
+          riwayatPerawatan,
+          //space
+          spaceMenu,
+          //menu
+          menuAplikasi,
+          const Padding(padding: EdgeInsets.only(top: 20.0)),
+          spaceCarousel,
+          carouselWidget,
+          const Padding(padding: EdgeInsets.only(top: 20.0)),
+        ],
       ),
     );
   }
@@ -45,29 +38,32 @@ class NavHome extends StatelessWidget {
 
 get onPressed => null;
 
-Widget navbarApp = Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-    const Text(
-      'My App',
-      style: TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
+Widget navbarApp = Container(
+  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      const Text(
+        'My App',
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
-    ),
-    Badge(
-      badgeContent:
-          const Text('10', style: TextStyle(color: Colors.white, fontSize: 8)),
-      child: IconButton(
-          onPressed: onPressed,
-          icon: const Icon(
-            Icons.notifications,
-            color: Color.fromRGBO(44, 208, 72, 1),
-          )),
-      badgeColor: Colors.red.shade400,
-      position: BadgePosition.topEnd(end: 3, top: 8),
-    ),
-  ],
+      Badge(
+        badgeContent: const Text('10',
+            style: TextStyle(color: Colors.white, fontSize: 8)),
+        child: IconButton(
+            onPressed: onPressed,
+            icon: const Icon(
+              Icons.notifications,
+              color: Color.fromRGBO(44, 208, 72, 1),
+            )),
+        badgeColor: Colors.red.shade400,
+        position: BadgePosition.topEnd(end: 3, top: 8),
+      ),
+    ],
+  ),
 );
 
 Widget menuAplikasi = Column(
@@ -444,6 +440,7 @@ Widget spaceMenu = const Padding(
 );
 
 Widget spaceRiwayat = Container(
+  margin: const EdgeInsets.only(left: 20.0),
   alignment: Alignment.topLeft,
   padding: const EdgeInsets.only(top: 30.0, bottom: 10.0),
   child: const Text(
@@ -461,12 +458,13 @@ Widget cardPendaftaranMandiri = Container(
     boxShadow: [
       BoxShadow(
         color: Colors.grey,
-        offset: Offset(3.0, 7.0),
+        offset: Offset(1.0, 1.0),
         blurRadius: 10,
         spreadRadius: -2,
       )
     ],
   ),
+  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
   padding: const EdgeInsets.only(
     top: 10,
     left: 15,
@@ -516,108 +514,111 @@ Widget cardPendaftaranMandiri = Container(
   ),
 );
 
-Widget riwayatPerawatan = Row(
-  children: [
-    Expanded(
-      child: Container(
-        decoration: const BoxDecoration(
-          color: Color.fromRGBO(250, 255, 251, 1),
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(3.0, 7.0),
-              blurRadius: 10,
-              spreadRadius: -2,
-            )
-          ],
-        ),
-        padding: const EdgeInsets.only(
-          top: 15.0,
-          left: 15.0,
-          right: 20.0,
-          bottom: 15.0,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: const [
-                Image(
-                  height: 75,
-                  width: 75,
-                  image: AssetImage('assets/images/rawat-jalan.png'),
-                  semanticLabel: 'rawat jalan',
-                ),
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                Text('Rawat Jalan',
-                    style:
-                        TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-              ],
-            ),
-            const Text(
-              '10',
-              style: TextStyle(
-                fontSize: 28,
-                color: Colors.redAccent,
+Widget riwayatPerawatan = Container(
+  margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+  child: Row(
+    children: [
+      Expanded(
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(250, 255, 251, 1),
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(3.0, 7.0),
+                blurRadius: 10,
+                spreadRadius: -2,
+              )
+            ],
+          ),
+          padding: const EdgeInsets.only(
+            top: 15.0,
+            left: 15.0,
+            right: 20.0,
+            bottom: 15.0,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: const [
+                  Image(
+                    height: 75,
+                    width: 75,
+                    image: AssetImage('assets/images/rawat-jalan.png'),
+                    semanticLabel: 'rawat jalan',
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10.0)),
+                  Text('Rawat Jalan',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                ],
               ),
-            ),
-          ],
+              const Text(
+                '10',
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.redAccent,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-    const Padding(
-      padding: EdgeInsets.only(left: 20.0),
-    ),
-    Expanded(
-      child: Container(
-        decoration: const BoxDecoration(
-          color: Color.fromRGBO(250, 255, 251, 1),
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(3.0, 7.0),
-              blurRadius: 10,
-              spreadRadius: -2,
-            )
-          ],
-        ),
-        padding: const EdgeInsets.only(
-          top: 15.0,
-          left: 15.0,
-          right: 20.0,
-          bottom: 15.0,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: const [
-                Image(
-                  height: 75,
-                  width: 75,
-                  image: AssetImage('assets/images/rawat-inap.png'),
-                  semanticLabel: 'rawat inap',
-                ),
-                Padding(padding: EdgeInsets.only(top: 10.0)),
-                Text('Rawat Inap',
-                    style:
-                        TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
-              ],
-            ),
-            const Text(
-              '3',
-              style: TextStyle(
-                fontSize: 28,
-                color: Colors.redAccent,
-              ),
-            ),
-          ],
-        ),
+      const Padding(
+        padding: EdgeInsets.only(left: 20.0),
       ),
-    )
-  ],
+      Expanded(
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(250, 255, 251, 1),
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(3.0, 7.0),
+                blurRadius: 10,
+                spreadRadius: -2,
+              )
+            ],
+          ),
+          padding: const EdgeInsets.only(
+            top: 15.0,
+            left: 15.0,
+            right: 20.0,
+            bottom: 15.0,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: const [
+                  Image(
+                    height: 75,
+                    width: 75,
+                    image: AssetImage('assets/images/rawat-inap.png'),
+                    semanticLabel: 'rawat inap',
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 10.0)),
+                  Text('Rawat Inap',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                ],
+              ),
+              const Text(
+                '3',
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.redAccent,
+                ),
+              ),
+            ],
+          ),
+        ),
+      )
+    ],
+  ),
 );
 
 Widget carouselWidget = CarouselSlider(
