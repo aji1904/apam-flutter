@@ -21,4 +21,4 @@ samples, guidance on mobile development, and a full API reference.
 #screenshot
 #![Screenshot_2021-11-04-10-44-28-002_com example my_app](https://user-images.githubusercontent.com/38060397/141743074-40172a46-e7ba-4ab4-a358-c36487c846d7.jpg)
 
-<a href="url"><img src="https://user-images.githubusercontent.com/38060397/141743074-40172a46-e7ba-4ab4-a358-c36487c846d7.jpg" align="left" height="200" width="auto" ></a>
+<a href="url"><img src="https://user-images.githubusercontent.com/38060397/141743074-40172a46-e7ba-4ab4-a358-c36487c846d7.jpg" align="left" height="400" width="auto" ></a>
