@@ -14,7 +14,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainState extends State<MainApp> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 3;
 
   static const List<Widget> _widgetOptions = <Widget>[
     NavHome(),
@@ -29,30 +29,6 @@ class _MainState extends State<MainApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(231, 247, 233, 1),
-      // appBar: AppBar(
-      //   elevation: 4,
-      //   backgroundColor: const Color.fromRGBO(231, 247, 233, 1),
-      //   title: const Text(
-      //     'My App',
-      //     style: TextStyle(
-      //       color: Color.fromRGBO(44, 208, 72, 1),
-      //     ),
-      //   ),
-      //   actions: <Widget>[
-      //     Badge(
-      //       badgeContent: const Text('10',
-      //           style: TextStyle(color: Colors.white, fontSize: 8)),
-      //       child: IconButton(
-      //           onPressed: onPressed,
-      //           icon: const Icon(
-      //             Icons.notifications,
-      //             color: Color.fromRGBO(44, 208, 72, 1),
-      //           )),
-      //       badgeColor: Colors.red.shade400,
-      //       position: BadgePosition.topEnd(end: 23, top: 8),
-      //     )
-      //   ],
-      // ),
       body: SafeArea(
         child: Center(
           child: _widgetOptions.elementAt(_selectedIndex),

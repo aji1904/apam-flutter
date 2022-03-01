@@ -5,64 +5,53 @@ class ProfilApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-
-      child: Stack(
-        children: [
-          Container2,
-          Positioned(
-            child: Center(
-              child: Container1,
-            ),
-            height: 100,
-            width: 100,
-          )
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          photoProfile,
+          dataProfile,
         ],
       ),
     );
   }
 }
 
-Widget Container1 = ClipRRect(
-  borderRadius: BorderRadius.circular(200),
-  child: Container(
-    color: Colors.amber,
-  ),
-);
-
-Widget Container2 = Container(
-  alignment: const Alignment(20,10),
-  height: 200,
-  margin: const EdgeInsets.all(20),
-  decoration: const BoxDecoration(
-    borderRadius: BorderRadius.all(
-      Radius.circular(20),
+Widget photoProfile = Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: const [
+    Image(
+      image: AssetImage('assets/images/L.png'),
+      alignment: Alignment.center,
+      width: 150,
+      height: 150,
+      semanticLabel: 'Your Photo',
     ),
-    color: Colors.red,
-    boxShadow: [
-      BoxShadow(
-        color: Colors.grey,
-        offset: Offset(3.0, 7.0),
-        blurRadius: 10,
-        spreadRadius: -2,
-      )
-    ],
-  ),
+  ],
 );
 
-Widget Container3 = Container(
+Widget dataProfile = Container(
+  margin: const EdgeInsets.only(top: 15.0),
+  padding: const EdgeInsets.all(20.0),
   decoration: const BoxDecoration(
     borderRadius: BorderRadius.all(
       Radius.circular(10.0),
     ),
-    color: Colors.blueGrey,
-    boxShadow: [
-      BoxShadow(
-        color: Colors.grey,
-        offset: Offset(3.0, 7.0),
-        blurRadius: 10,
-        spreadRadius: -2,
-      )
+    color: Colors.white,
+  ),
+  child: Column(
+    children: const [
+      Text(
+        "Nomor Rekam Medis",
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Text("Aji Prasetyo"),
+      Text("19-April-1998 (24 Tahun)"),
+      Text("Laki-Laki"),
+      Text("KTP : 1671111111111"),
+      Text("BPJS : 111111222222"),
     ],
   ),
 );
