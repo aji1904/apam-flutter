@@ -1,12 +1,15 @@
+import 'package:app/view/main.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/index.dart';
-import 'package:my_app/login.dart';
 
-void main() => runApp(
-      MaterialApp(
-          title: 'APAM',
-          theme: ThemeData(
-            primaryColor: Colors.grey[800],
-          ),
-          home: const MainApp()),
+void main() => runApp(const Myapp());
+
+class Myapp extends StatelessWidget {
+  const Myapp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: Mainpage(),
     );
+  }
+}
