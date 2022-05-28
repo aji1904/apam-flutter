@@ -84,12 +84,7 @@ class _HomePageState extends State<HomePage> {
                     log("message");
                   },
                   child: Container(
-                    padding: const EdgeInsets.only(
-                      top: 10,
-                      left: 15,
-                      right: 15,
-                      bottom: 10,
-                    ),
+                    padding: const EdgeInsets.all(10.0),
                     child: Row(
                       children: [
                         Column(
@@ -151,9 +146,11 @@ class _HomePageState extends State<HomePage> {
                         onPressed: (() {
                           setState(() {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Login()));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Login(),
+                              ),
+                            );
                           });
                         }),
                         style: ButtonStyle(

@@ -1,3 +1,4 @@
+import 'package:app/view/page/cari.dart';
 import 'package:app/view/page/home.dart';
 import 'package:app/view/page/profile.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,7 @@ class _HomeState extends State<Home> {
       'Likes',
       style: optionStyle,
     ),
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
+    Searchtarif(),
     ProfileApp(),
   ];
 
@@ -56,7 +54,6 @@ class _HomeState extends State<Home> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
-              tabBorderRadius: 30.0,
               rippleColor: Colors.grey[300]!,
               hoverColor: Colors.grey[100]!,
               gap: 8,

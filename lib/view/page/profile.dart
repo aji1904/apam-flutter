@@ -1,3 +1,5 @@
+import 'package:app/view/page/changepassword.dart';
+import 'package:app/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -18,10 +20,12 @@ class _ProfileAppState extends State<ProfileApp> {
             children: [
               Container(
                 decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomRight,
-                        end: Alignment.topCenter,
-                        colors: [Colors.lightGreenAccent, Colors.greenAccent])),
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topCenter,
+                    colors: [Colors.lightGreenAccent, Colors.greenAccent],
+                  ),
+                ),
                 padding: const EdgeInsets.all(25.0),
                 child: Column(
                   children: [
@@ -76,7 +80,6 @@ class _ProfileAppState extends State<ProfileApp> {
                         ),
                       ],
                     ),
-                    const Padding(padding: EdgeInsets.only(bottom: 10.0)),
                     Container(
                       padding: const EdgeInsets.only(
                           top: 20.0, left: 20.0, right: 20.0, bottom: 10.0),
@@ -86,7 +89,7 @@ class _ProfileAppState extends State<ProfileApp> {
                           data: "001388",
                           errorCorrectionLevel: QrErrorCorrectLevel.M,
                           version: QrVersions.auto,
-                          size: 200.0,
+                          size: 180.0,
                         ),
                       ),
                     ),
@@ -238,7 +241,12 @@ class _ProfileAppState extends State<ProfileApp> {
                         const BorderSide(color: Colors.blue),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ChangePassword()));
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
@@ -251,7 +259,7 @@ class _ProfileAppState extends State<ProfileApp> {
                           Padding(
                             padding: EdgeInsets.only(right: 10.0),
                           ),
-                          Icon(Icons.password),
+                          Icon(Icons.key_outlined),
                         ],
                       ),
                     ),
@@ -309,7 +317,14 @@ class _ProfileAppState extends State<ProfileApp> {
                         const BorderSide(color: Colors.blue),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Login(),
+                        ),
+                      );
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
