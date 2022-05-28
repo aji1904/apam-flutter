@@ -75,6 +75,8 @@ flutter:
      - assets/kontak.png
      - assets/lab.png
      - assets/radiologi.png
+     - assets/bed.png
+     - assets/surgery.png
      - assets/L.png
      - assets/P.png
   #   - images/a_dot_ham.jpeg

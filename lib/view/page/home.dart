@@ -42,7 +42,9 @@ class _HomePageState extends State<HomePage> {
                     const Text(
                       "Bunda Medika Jakabaring",
                       style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.green),
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green),
                     ),
                     Badge(
                       position: BadgePosition.topEnd(end: 3, top: 2),
