@@ -31,7 +31,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       // appBar: AppBar(
       //   elevation: 20,
       //   title: const Text('GoogleNavBar'),
@@ -57,6 +56,7 @@ class _HomeState extends State<Home> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
             child: GNav(
+              tabBorderRadius: 30.0,
               rippleColor: Colors.grey[300]!,
               hoverColor: Colors.grey[100]!,
               gap: 8,

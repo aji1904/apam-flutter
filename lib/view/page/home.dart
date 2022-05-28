@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                               'Pendaftaran Mandiri',
                               style: TextStyle(
                                 fontSize: 20,
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -109,12 +109,12 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'Silahkan Lakukan pendaftaran',
                               style:
-                                  TextStyle(fontSize: 13, color: Colors.white),
+                                  TextStyle(fontSize: 13, color: Colors.black),
                             ),
                             Text(
                               'Mandiri Rawat Jalan',
                               style:
-                                  TextStyle(fontSize: 13, color: Colors.white),
+                                  TextStyle(fontSize: 13, color: Colors.black),
                             ),
                           ],
                         ),
@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.green)),
+                                side: const BorderSide(color: Colors.blue)),
                           ),
                         ),
                         child: Row(
@@ -190,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                             const Text(
-                              '10',
+                              '9',
                               style: TextStyle(
                                 fontSize: 28,
                                 color: Colors.redAccent,
@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.green)),
+                                side: const BorderSide(color: Colors.blue)),
                           ),
                           backgroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
@@ -273,8 +273,7 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side:
-                                        const BorderSide(color: Colors.green)),
+                                    side: const BorderSide(color: Colors.blue)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.white),
@@ -312,8 +311,7 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side:
-                                        const BorderSide(color: Colors.green)),
+                                    side: const BorderSide(color: Colors.blue)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.white),
@@ -352,8 +350,7 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side:
-                                        const BorderSide(color: Colors.green)),
+                                    side: const BorderSide(color: Colors.blue)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.white),
@@ -395,8 +392,7 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side:
-                                        const BorderSide(color: Colors.green)),
+                                    side: const BorderSide(color: Colors.blue)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.white),
@@ -434,8 +430,7 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side:
-                                        const BorderSide(color: Colors.green)),
+                                    side: const BorderSide(color: Colors.blue)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.white),
@@ -473,8 +468,7 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side:
-                                        const BorderSide(color: Colors.green)),
+                                    side: const BorderSide(color: Colors.blue)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
                                   Colors.white),

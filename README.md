@@ -1,4 +1,4 @@
-# my_app
+# app
 
 A new Flutter project.
 
@@ -14,13 +14,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-# apam-flutter
-
-# Under Development
-
-#screenshot
-
-<a href="url"><img src="https://github.com/aji1904/apam-flutter/blob/main/screenshoot/awal.png" align="left" height="600" width="auto" ></a>
-<a href="url"><img src="https://github.com/aji1904/apam-flutter/blob/main/screenshoot/forgot.png" align="left" height="600" width="auto" ></a>
-<a href="url"><img src="https://github.com/aji1904/apam-flutter/blob/main/screenshoot/login.png" align="left" height="600" width="auto" ></a>
-<a href="url"><img src="https://github.com/aji1904/apam-flutter/blob/main/screenshoot/home.png" align="left" height="600" width="auto" ></a>
