@@ -26,7 +26,7 @@ class _SearchtarifState extends State<Searchtarif> {
                   padding: const EdgeInsets.all(10.0),
                   child: const Center(
                     child: Text(
-                      "Tarif Rumah Sakit",
+                      "Informasi Rumah Sakit",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15.0,
@@ -62,14 +62,14 @@ class _SearchtarifState extends State<Searchtarif> {
                             children: const [
                               Image(
                                 fit: BoxFit.fill,
-                                image: AssetImage('assets/surgery.png'),
-                                semanticLabel: 'Paket Operasi',
+                                image: AssetImage('assets/lab.png'),
+                                semanticLabel: 'Tarif Laboratorium',
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
-                                "Paket Operasi",
+                                "Tarif Laboratorium",
                                 style: TextStyle(
                                     fontSize: 15, color: Colors.black),
                               ),
@@ -105,14 +105,14 @@ class _SearchtarifState extends State<Searchtarif> {
                             children: const [
                               Image(
                                 fit: BoxFit.fill,
-                                image: AssetImage('assets/lab.png'),
-                                semanticLabel: 'Tarif Laboratorium',
+                                image: AssetImage('assets/surgery.png'),
+                                semanticLabel: 'Paket Operasi',
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
-                                "Tarif Laboratorium",
+                                "Paket Operasi",
                                 style: TextStyle(
                                     fontSize: 15, color: Colors.black),
                               ),
@@ -198,7 +198,7 @@ class _SearchtarifState extends State<Searchtarif> {
                             children: const [
                               Image(
                                 fit: BoxFit.fill,
-                                image: AssetImage('assets/bed.png'),
+                                image: AssetImage('assets/double-bed.png'),
                                 semanticLabel: 'Tarif Kamar',
                               ),
                               Padding(
@@ -206,6 +206,192 @@ class _SearchtarifState extends State<Searchtarif> {
                               ),
                               Text(
                                 "Tarif Kamar",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      flex: 2,
+                    ),
+                  ],
+                ),
+                const Padding(padding: EdgeInsets.only(bottom: 20.0)),
+                Row(
+                  children: [
+                    Flexible(
+                      child: ElevatedButton(
+                        onPressed: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GetListData()));
+                        }),
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                              side: const BorderSide(
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                          child: Column(
+                            children: const [
+                              Image(
+                                fit: BoxFit.fill,
+                                image: AssetImage('assets/kontak.png'),
+                                semanticLabel: 'Kontak',
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10.0),
+                              ),
+                              Text(
+                                "Kontak RS",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      flex: 2,
+                    ),
+                    const Padding(padding: EdgeInsets.only(right: 20.0)),
+                    Flexible(
+                      child: ElevatedButton(
+                        onPressed: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GetListData()));
+                        }),
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                                side: const BorderSide(color: Colors.blue)),
+                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                          child: Column(
+                            children: const [
+                              Image(
+                                fit: BoxFit.fill,
+                                image: AssetImage('assets/insurance.png'),
+                                semanticLabel: 'Asuransi',
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10.0),
+                              ),
+                              Text(
+                                "Asuransi",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      flex: 2,
+                    ),
+                  ],
+                ),
+                const Padding(padding: EdgeInsets.only(bottom: 20.0)),
+                Row(
+                  children: [
+                    Flexible(
+                      child: ElevatedButton(
+                        onPressed: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GetListData()));
+                        }),
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                              side: const BorderSide(
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                          child: Column(
+                            children: const [
+                              Image(
+                                fit: BoxFit.fill,
+                                image: AssetImage('assets/bed.png'),
+                                semanticLabel: 'Kamar Tersedia',
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10.0),
+                              ),
+                              Text(
+                                "Kamar Tersedia",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      flex: 2,
+                    ),
+                    const Padding(padding: EdgeInsets.only(right: 20.0)),
+                    Flexible(
+                      child: ElevatedButton(
+                        onPressed: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GetListData()));
+                        }),
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                                side: const BorderSide(color: Colors.blue)),
+                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                          child: Column(
+                            children: const [
+                              Image(
+                                fit: BoxFit.fill,
+                                image: AssetImage('assets/bad.png'),
+                                semanticLabel: 'Pengaduan',
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 10.0),
+                              ),
+                              Text(
+                                "Pengaduan",
                                 style: TextStyle(
                                     fontSize: 15, color: Colors.black),
                               ),

@@ -97,7 +97,7 @@ class _GetListDataState extends State<GetListData> {
                             decoration: BoxDecoration(
                                 color: Colors.greenAccent,
                                 borderRadius: BorderRadius.circular(10.0)),
-                            child: const Text("Rp. 100.000"),
+                            child: const Text("Rp. 5,2 Juta"),
                           ),
                         ),
                       ],
@@ -143,7 +143,7 @@ class _GetListDataState extends State<GetListData> {
                             decoration: BoxDecoration(
                                 color: Colors.greenAccent,
                                 borderRadius: BorderRadius.circular(10.0)),
-                            child: const Text("Rp. 100.000"),
+                            child: const Text("Rp. 560 Ribu"),
                           ),
                         ),
                       ],

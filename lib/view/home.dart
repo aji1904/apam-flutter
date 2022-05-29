@@ -1,3 +1,4 @@
+import 'package:app/view/page/booking.dart';
 import 'package:app/view/page/cari.dart';
 import 'package:app/view/page/home.dart';
 import 'package:app/view/page/profile.dart';
@@ -14,14 +15,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Likes',
-      style: optionStyle,
-    ),
+    BookingApp(),
     Searchtarif(),
     ProfileApp(),
   ];
@@ -72,8 +68,8 @@ class _HomeState extends State<Home> {
                   iconActiveColor: Colors.blue,
                 ),
                 GButton(
-                  icon: LineIcons.heart,
-                  text: 'Likes',
+                  icon: LineIcons.mobilePhone,
+                  text: 'Register',
                   iconColor: Colors.blue,
                   iconActiveColor: Colors.blue,
                   textColor: Colors.blue,

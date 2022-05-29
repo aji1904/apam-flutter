@@ -79,6 +79,9 @@ flutter:
      - assets/surgery.png
      - assets/L.png
      - assets/P.png
+     - assets/insurance.png
+     - assets/bad.png
+     - assets/double-bed.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
