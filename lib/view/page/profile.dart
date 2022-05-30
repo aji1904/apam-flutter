@@ -93,6 +93,20 @@ class _ProfileAppState extends State<ProfileApp> {
                         ),
                       ),
                     ),
+                    Container(
+                      padding: EdgeInsets.all(5.0),
+                      width: 95.0,
+                      child: ElevatedButton(
+                          style: ButtonStyle(),
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Text("Ubah"),
+                              Padding(padding: EdgeInsets.only(left: 3.0)),
+                              Icon(Icons.edit_outlined, size: 17),
+                            ],
+                          )),
+                    ),
                   ],
                 ),
               ),

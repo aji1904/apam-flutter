@@ -1,6 +1,6 @@
 import 'package:app/view/login.dart';
+import 'package:app/view/register.dart';
 import 'package:flutter/material.dart';
-
 
 class Mainpage extends StatefulWidget {
   const Mainpage({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class _MainpageState extends State<Mainpage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/logors.png", width: 150.0),
+                  Image.asset("assets/logors.png", width: 120.0),
                   const Padding(
                     padding: EdgeInsets.only(top: 20.0),
                   ),
@@ -42,7 +42,7 @@ class _MainpageState extends State<Mainpage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Login(),
+                          builder: (context) => const Register(),
                         ),
                       );
                     }),

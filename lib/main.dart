@@ -13,13 +13,14 @@ class Myapp extends StatelessWidget {
       home: Scaffold(
         body: AnimatedSplashScreen(
           splashIconSize: 110.0,
-          duration: 3000,
+          duration: 2500,
           splash: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Image.asset(
               "assets/bunda-medika.png",
             ),
           ),
+          centered: true,
           nextScreen: const Mainpage(),
         ),
       ),
