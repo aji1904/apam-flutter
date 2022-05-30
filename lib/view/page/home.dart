@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
-                          color: Colors.green),
+                          color: Colors.teal),
                     ),
                     Badge(
                       position: BadgePosition.topEnd(end: 3, top: 2),
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                         },
-                        color: Colors.green,
+                        color: Colors.teal,
                       ),
                     ),
                   ],
