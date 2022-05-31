@@ -23,7 +23,7 @@ class _BookingAppState extends State<BookingApp> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       color: Colors.greenAccent),
                   padding: const EdgeInsets.all(10.0),
                   child: const Center(
@@ -44,51 +44,175 @@ class _BookingAppState extends State<BookingApp> {
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
+                          borderRadius: BorderRadius.circular(10.0),
+                          side: BorderSide(color: Colors.blue)),
                     ),
                   ),
                   onPressed: () {},
                   child: Container(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: EdgeInsets.only(top: 7.0, bottom: 7.0),
                     child: Row(
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              'Pendaftaran Mandiri',
+                          children: [
+                            const Text(
+                              'POLIKLINIK ANAK',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 15,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(bottom: 10.0),
-                            ),
-                            Text(
-                              'Silahkan Lakukan pendaftaran',
+                            const Text(
+                              'BPJS KESEHATAN',
                               style:
                                   TextStyle(fontSize: 13, color: Colors.black),
                             ),
-                            Text(
-                              'Mandiri Rawat Jalan',
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.black),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 5.0),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(
+                                  top: 3.0, bottom: 3.0, left: 7.0, right: 7.0),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  color: Colors.lightBlueAccent),
+                              child: Text(
+                                'dr. Andra Kurniato, Sp. A',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const <Widget>[
-                              Image(
-                                height: 80,
-                                width: 80,
-                                image: AssetImage('assets/logo.png'),
-                                semanticLabel: 'yaski',
-                              )
+                            children: [
+                              Text(
+                                "2022-05-31",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "2022/05/31/000082",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 5.0),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(
+                                    top: 3.0,
+                                    bottom: 3.0,
+                                    left: 7.0,
+                                    right: 7.0),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    color: Colors.red),
+                                child: Text(
+                                  'Belum',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                ),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Colors.greenAccent,
+                    ),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          side: BorderSide(color: Colors.blue)),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Container(
+                    padding: EdgeInsets.only(top: 7.0, bottom: 7.0),
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'POLIKLINIK ANAK',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const Text(
+                              'BPJS KESEHATAN',
+                              style:
+                                  TextStyle(fontSize: 13, color: Colors.black),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(bottom: 5.0),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(
+                                  top: 3.0, bottom: 3.0, left: 7.0, right: 7.0),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  color: Colors.lightBlueAccent),
+                              child: Text(
+                                'dr. Andra Kurniato, Sp. A',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "2022-05-31",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Text(
+                                "2022/05/31/000082",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 5.0),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(
+                                    top: 3.0,
+                                    bottom: 3.0,
+                                    left: 7.0,
+                                    right: 7.0),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    color: Colors.green),
+                                child: Text(
+                                  'Sudah',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ),

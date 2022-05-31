@@ -61,12 +61,12 @@ class _LoginState extends State<Login> {
                   TextField(
                     decoration: InputDecoration(
                       suffixIcon: const Icon(
-                        Icons.account_circle,
+                        Icons.alternate_email,
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                      labelText: "Username",
+                      labelText: "Email",
                       contentPadding: const EdgeInsets.only(
                         left: 25.0,
                         top: 20.0,

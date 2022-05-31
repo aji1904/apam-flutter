@@ -10,6 +10,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   bool viewPass = true;
+  bool viewPass2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -48,12 +49,12 @@ class _RegisterState extends State<Register> {
                   TextField(
                     decoration: InputDecoration(
                       suffixIcon: const Icon(
-                        Icons.account_circle,
+                        Icons.alternate_email,
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                      labelText: "Username",
+                      labelText: "Email",
                       contentPadding: const EdgeInsets.only(
                         left: 25.0,
                         top: 20.0,
@@ -91,6 +92,34 @@ class _RegisterState extends State<Register> {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 20.0),
                   ),
+                  TextField(
+                    obscureText: viewPass2,
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            viewPass2 = !viewPass2;
+                          });
+                        },
+                        icon: Icon(viewPass2
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        autofocus: false,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      labelText: "Ulangi Password",
+                      contentPadding: const EdgeInsets.only(
+                        left: 25.0,
+                        top: 20.0,
+                        bottom: 20.0,
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 20.0),
+                  ),
                   ElevatedButton(
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all<StadiumBorder>(
@@ -111,7 +140,7 @@ class _RegisterState extends State<Register> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
-                            Text("Login"),
+                            Text("Daftar"),
                             Padding(
                               padding: EdgeInsets.only(left: 10.0),
                             ),
@@ -120,17 +149,6 @@ class _RegisterState extends State<Register> {
                         ),
                       ),
                     ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Login(),
-                        ),
-                      );
-                    },
-                    child: const Text("Lupa Password ?"),
                   ),
                 ],
               ),
