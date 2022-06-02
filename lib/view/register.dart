@@ -41,6 +41,7 @@ class _RegisterState extends State<Register> {
                   ),
                   const Text(
                     "RS Bunda Medika Jakabaring",
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 25.0, color: Colors.green),
                   ),
                   const Padding(

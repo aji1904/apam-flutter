@@ -1,3 +1,4 @@
+import 'package:app/view/page/riwayat.dart';
 import 'package:flutter/material.dart';
 
 class BookingApp extends StatefulWidget {
@@ -23,7 +24,7 @@ class _BookingAppState extends State<BookingApp> {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
+                      borderRadius: BorderRadius.circular(20.0),
                       color: Colors.greenAccent),
                   padding: const EdgeInsets.all(10.0),
                   child: const Center(
@@ -44,13 +45,18 @@ class _BookingAppState extends State<BookingApp> {
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: Colors.blue)),
+                          borderRadius: BorderRadius.circular(20.0),
+                          side: const BorderSide(color: Colors.blue)),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RiwayatPasien()));
+                  },
                   child: Container(
-                    padding: EdgeInsets.only(top: 7.0, bottom: 7.0),
+                    padding: const EdgeInsets.only(top: 7.0, bottom: 7.0),
                     child: Row(
                       children: [
                         Column(
@@ -73,13 +79,14 @@ class _BookingAppState extends State<BookingApp> {
                               padding: EdgeInsets.only(bottom: 5.0),
                             ),
                             Container(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   top: 3.0, bottom: 3.0, left: 7.0, right: 7.0),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: Colors.lightBlueAccent),
-                              child: Text(
+                              child: const Text(
                                 'dr. Andra Kurniato, Sp. A',
+                                overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: 13,
                                   color: Colors.black,
@@ -92,27 +99,27 @@ class _BookingAppState extends State<BookingApp> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text(
+                              const Text(
                                 "2022-05-31",
                                 style: TextStyle(color: Colors.black),
                               ),
-                              Text(
+                              const Text(
                                 "2022/05/31/000082",
                                 style: TextStyle(color: Colors.black),
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 5.0),
                               ),
                               Container(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 3.0,
                                     bottom: 3.0,
                                     left: 7.0,
                                     right: 7.0),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: Colors.red),
-                                child: Text(
+                                    color: Colors.blueGrey),
+                                child: const Text(
                                   'Belum',
                                   style: TextStyle(
                                     fontSize: 13,
@@ -127,7 +134,7 @@ class _BookingAppState extends State<BookingApp> {
                     ),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(bottom: 10.0),
                 ),
                 ElevatedButton(
@@ -137,13 +144,13 @@ class _BookingAppState extends State<BookingApp> {
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                          side: BorderSide(color: Colors.blue)),
+                          borderRadius: BorderRadius.circular(20.0),
+                          side: const BorderSide(color: Colors.blue)),
                     ),
                   ),
                   onPressed: () {},
                   child: Container(
-                    padding: EdgeInsets.only(top: 7.0, bottom: 7.0),
+                    padding: const EdgeInsets.only(top: 7.0, bottom: 7.0),
                     child: Row(
                       children: [
                         Column(
@@ -166,12 +173,12 @@ class _BookingAppState extends State<BookingApp> {
                               padding: EdgeInsets.only(bottom: 5.0),
                             ),
                             Container(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   top: 3.0, bottom: 3.0, left: 7.0, right: 7.0),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: Colors.lightBlueAccent),
-                              child: Text(
+                              child: const Text(
                                 'dr. Andra Kurniato, Sp. A',
                                 style: TextStyle(
                                   fontSize: 13,
@@ -185,27 +192,27 @@ class _BookingAppState extends State<BookingApp> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Text(
+                              const Text(
                                 "2022-05-31",
                                 style: TextStyle(color: Colors.black),
                               ),
-                              Text(
+                              const Text(
                                 "2022/05/31/000082",
                                 style: TextStyle(color: Colors.black),
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 5.0),
                               ),
                               Container(
-                                padding: EdgeInsets.only(
+                                padding: const EdgeInsets.only(
                                     top: 3.0,
                                     bottom: 3.0,
                                     left: 7.0,
                                     right: 7.0),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: Colors.green),
-                                child: Text(
+                                    color: Colors.blue),
+                                child: const Text(
                                   'Sudah',
                                   style: TextStyle(
                                     fontSize: 13,

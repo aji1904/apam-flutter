@@ -49,56 +49,108 @@ class _HomeState extends State<Home> {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-            child: GNav(
-              rippleColor: Colors.grey[300]!,
-              hoverColor: Colors.grey[100]!,
-              gap: 8,
-              activeColor: Colors.black,
-              iconSize: 24,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              duration: const Duration(milliseconds: 200),
-              tabBackgroundColor: Colors.grey[100]!,
-              color: Colors.black,
-              tabs: const [
-                GButton(
-                  icon: LineIcons.home,
-                  text: 'Home',
-                  iconColor: Colors.blue,
-                  textColor: Colors.blue,
-                  iconActiveColor: Colors.blue,
-                ),
-                GButton(
-                  icon: LineIcons.mobilePhone,
-                  text: 'Register',
-                  iconColor: Colors.blue,
-                  iconActiveColor: Colors.blue,
-                  textColor: Colors.blue,
-                ),
-                GButton(
-                  icon: LineIcons.search,
-                  text: 'Search',
-                  iconColor: Colors.blue,
-                  iconActiveColor: Colors.blue,
-                  textColor: Colors.blue,
-                ),
-                GButton(
-                  icon: LineIcons.user,
-                  text: 'Profile',
-                  iconActiveColor: Colors.blue,
-                  iconColor: Colors.blue,
-                  textColor: Colors.blue,
-                ),
-              ],
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-            ),
+            child: (MediaQuery.of(context).size.width <= 320)
+                ? GbuttonMini()
+                : GbuttonFull(),
           ),
         ),
       ),
+    );
+  }
+
+  GNav GbuttonMini() {
+    return GNav(
+      rippleColor: Colors.grey[300]!,
+      hoverColor: Colors.grey[100]!,
+      gap: 8,
+      activeColor: Colors.black,
+      iconSize: 24,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      duration: const Duration(milliseconds: 200),
+      tabBackgroundColor: Colors.grey[100]!,
+      color: Colors.black,
+      tabs: const [
+        GButton(
+          icon: LineIcons.home,
+          iconColor: Colors.blue,
+          textColor: Colors.blue,
+          iconActiveColor: Colors.blue,
+        ),
+        GButton(
+          icon: LineIcons.mobilePhone,
+          iconColor: Colors.blue,
+          iconActiveColor: Colors.blue,
+          textColor: Colors.blue,
+        ),
+        GButton(
+          icon: LineIcons.search,
+          iconColor: Colors.blue,
+          iconActiveColor: Colors.blue,
+          textColor: Colors.blue,
+        ),
+        GButton(
+          icon: LineIcons.user,
+          iconActiveColor: Colors.blue,
+          iconColor: Colors.blue,
+          textColor: Colors.blue,
+        ),
+      ],
+      selectedIndex: _selectedIndex,
+      onTabChange: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
+    );
+  }
+
+  GNav GbuttonFull() {
+    return GNav(
+      rippleColor: Colors.grey[300]!,
+      hoverColor: Colors.grey[100]!,
+      gap: 8,
+      activeColor: Colors.black,
+      iconSize: 24,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      duration: const Duration(milliseconds: 200),
+      tabBackgroundColor: Colors.grey[100]!,
+      color: Colors.black,
+      tabs: const [
+        GButton(
+          icon: LineIcons.home,
+          text: "Home",
+          iconColor: Colors.blue,
+          textColor: Colors.blue,
+          iconActiveColor: Colors.blue,
+        ),
+        GButton(
+          icon: LineIcons.mobilePhone,
+          text: 'Register',
+          iconColor: Colors.blue,
+          iconActiveColor: Colors.blue,
+          textColor: Colors.blue,
+        ),
+        GButton(
+          icon: LineIcons.search,
+          text: 'Search',
+          iconColor: Colors.blue,
+          iconActiveColor: Colors.blue,
+          textColor: Colors.blue,
+        ),
+        GButton(
+          icon: LineIcons.user,
+          text: 'Profile',
+          iconActiveColor: Colors.blue,
+          iconColor: Colors.blue,
+          textColor: Colors.blue,
+        ),
+      ],
+      selectedIndex: _selectedIndex,
+      onTabChange: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
     );
   }
 }

@@ -120,8 +120,7 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: const <Widget>[
                               Image(
-                                height: 80,
-                                width: 80,
+                                fit: BoxFit.fill,
                                 image: AssetImage('assets/logo.png'),
                                 semanticLabel: 'yaski',
                               )
@@ -141,116 +140,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 // Riwayat Perawatan
-                Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: (() {
-                          setState(() {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const Login(),
-                              ),
-                            );
-                          });
-                        }),
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: const [
-                                Padding(padding: EdgeInsets.only(top: 10.0)),
-                                Image(
-                                  height: 80,
-                                  width: 80,
-                                  image: AssetImage('assets/rawat-jalan.png'),
-                                  semanticLabel: 'rawat jalan',
-                                ),
-                                Padding(padding: EdgeInsets.only(top: 10.0)),
-                                Text(
-                                  'Rawat Jalan',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Padding(padding: EdgeInsets.only(top: 10.0)),
-                              ],
-                            ),
-                            const Text(
-                              '9',
-                              style: TextStyle(
-                                fontSize: 28,
-                                color: Colors.redAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 20.0),
-                    ),
-                    Expanded(
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
-                          ),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                        ),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              children: const [
-                                Padding(padding: EdgeInsets.only(top: 10.0)),
-                                Image(
-                                  height: 80,
-                                  width: 80,
-                                  image: AssetImage('assets/rawat-inap.png'),
-                                  semanticLabel: 'rawat inap',
-                                ),
-                                Padding(padding: EdgeInsets.only(top: 10.0)),
-                                Text(
-                                  'Rawat Inap',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                Padding(padding: EdgeInsets.only(top: 10.0)),
-                              ],
-                            ),
-                            const Text(
-                              '3',
-                              style: TextStyle(
-                                fontSize: 28,
-                                color: Colors.redAccent,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                (MediaQuery.of(context).size.width <= 320
+                    ? MiniLayar(context)
+                    : FullLayar(context)),
+                // riwayat Perawatan
                 Container(
                   alignment: Alignment.topLeft,
                   padding: const EdgeInsets.only(top: 25.0, bottom: 10.0),
@@ -551,6 +444,233 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  Row MiniLayar(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: ElevatedButton(
+            onPressed: (() {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Login(),
+                  ),
+                );
+              });
+            }),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    side: const BorderSide(color: Colors.blue)),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: const [
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Image(
+                      height: 50,
+                      width: 50,
+                      image: AssetImage('assets/rawat-jalan.png'),
+                      semanticLabel: 'rawat jalan',
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Rawat Jalan',
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                  ],
+                ),
+                const Text(
+                  '100',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+        ),
+        Expanded(
+          child: ElevatedButton(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    side: const BorderSide(color: Colors.blue)),
+              ),
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            ),
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: const [
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Image(
+                      height: 50,
+                      width: 50,
+                      image: AssetImage('assets/rawat-inap.png'),
+                      semanticLabel: 'rawat inap',
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Text(
+                      'Rawat Inap',
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                  ],
+                ),
+                const Text(
+                  '100',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Row FullLayar(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: ElevatedButton(
+            onPressed: (() {
+              setState(() {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Login(),
+                  ),
+                );
+              });
+            }),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    side: const BorderSide(color: Colors.blue)),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: const [
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Image(
+                      height: 80,
+                      width: 80,
+                      image: AssetImage('assets/rawat-jalan.png'),
+                      semanticLabel: 'rawat jalan',
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Rawat Jalan',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                  ],
+                ),
+                const Text(
+                  '100',
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+        ),
+        Expanded(
+          child: ElevatedButton(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    side: const BorderSide(color: Colors.blue)),
+              ),
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+            ),
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: const [
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    Image(
+                      height: 80,
+                      width: 80,
+                      image: AssetImage('assets/rawat-inap.png'),
+                      semanticLabel: 'rawat inap',
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        'Rawat Inap',
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: 10.0)),
+                  ],
+                ),
+                const Text(
+                  '100',
+                  style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

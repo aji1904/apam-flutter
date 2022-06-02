@@ -198,7 +198,7 @@ class _SearchtarifState extends State<Searchtarif> {
                             children: const [
                               Image(
                                 fit: BoxFit.fill,
-                                image: AssetImage('assets/double-bed.png'),
+                                image: AssetImage('assets/bed.png'),
                                 semanticLabel: 'Tarif Kamar',
                               ),
                               Padding(
@@ -341,7 +341,8 @@ class _SearchtarifState extends State<Searchtarif> {
                             children: const [
                               Image(
                                 fit: BoxFit.fill,
-                                image: AssetImage('assets/bed.png'),
+                                image: AssetImage(
+                                    'assets/icon_fasilitas_kamar.png'),
                                 semanticLabel: 'Kamar Tersedia',
                               ),
                               Padding(

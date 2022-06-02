@@ -87,7 +87,7 @@ class _ProfileAppState extends State<ProfileApp> {
                         elevation: 4,
                         child: QrImage(
                           data: "001388",
-                          errorCorrectionLevel: QrErrorCorrectLevel.M,
+                          errorCorrectionLevel: QrErrorCorrectLevel.H,
                           version: QrVersions.auto,
                           size: 180.0,
                         ),
