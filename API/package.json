@@ -1,17 +1,7 @@
 {
   "dependencies": {
-    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "mysql": "^2.18.1"
-  },
-  "name": "apam",
-  "version": "1.0.0",
-  "main": "app.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
