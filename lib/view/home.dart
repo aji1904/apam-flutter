@@ -58,6 +58,7 @@ class _HomeState extends State<Home> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   GNav GbuttonMini() {
     return GNav(
       rippleColor: Colors.grey[300]!,
@@ -104,6 +105,7 @@ class _HomeState extends State<Home> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   GNav GbuttonFull() {
     return GNav(
       rippleColor: Colors.grey[300]!,

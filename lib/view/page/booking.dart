@@ -11,6 +11,11 @@ class BookingApp extends StatefulWidget {
 class _BookingAppState extends State<BookingApp> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    double WidthScreen = MediaQuery.of(context).size.width;
+    // ignore: non_constant_identifier_names
+    final double FontSizeText = (WidthScreen <= 320) ? 11 : 15;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -62,18 +67,18 @@ class _BookingAppState extends State<BookingApp> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               'POLIKLINIK ANAK',
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: FontSizeText,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            const Text(
+                            Text(
                               'BPJS KESEHATAN',
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.black),
+                              style: TextStyle(
+                                  fontSize: FontSizeText, color: Colors.black),
                             ),
                             const Padding(
                               padding: EdgeInsets.only(bottom: 5.0),
@@ -84,11 +89,11 @@ class _BookingAppState extends State<BookingApp> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
                                   color: Colors.lightBlueAccent),
-                              child: const Text(
+                              child: Text(
                                 'dr. Andra Kurniato, Sp. A',
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: 13,
+                                  fontSize: FontSizeText,
                                   color: Colors.black,
                                 ),
                               ),
@@ -99,13 +104,19 @@ class _BookingAppState extends State<BookingApp> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              const Text(
+                              Text(
                                 "2022-05-31",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: FontSizeText,
+                                ),
                               ),
-                              const Text(
+                              Text(
                                 "2022/05/31/000082",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: FontSizeText,
+                                ),
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(bottom: 5.0),
@@ -119,10 +130,10 @@ class _BookingAppState extends State<BookingApp> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
                                     color: Colors.blueGrey),
-                                child: const Text(
+                                child: Text(
                                   'Belum',
                                   style: TextStyle(
-                                    fontSize: 13,
+                                    fontSize: FontSizeText,
                                     color: Colors.white,
                                   ),
                                 ),
@@ -136,96 +147,6 @@ class _BookingAppState extends State<BookingApp> {
                 ),
                 const Padding(
                   padding: EdgeInsets.only(bottom: 10.0),
-                ),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      Colors.greenAccent,
-                    ),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                          side: const BorderSide(color: Colors.blue)),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Container(
-                    padding: const EdgeInsets.only(top: 7.0, bottom: 7.0),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'POLIKLINIK ANAK',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const Text(
-                              'BPJS KESEHATAN',
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.black),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(bottom: 5.0),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.only(
-                                  top: 3.0, bottom: 3.0, left: 7.0, right: 7.0),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  color: Colors.lightBlueAccent),
-                              child: const Text(
-                                'dr. Andra Kurniato, Sp. A',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              const Text(
-                                "2022-05-31",
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              const Text(
-                                "2022/05/31/000082",
-                                style: TextStyle(color: Colors.black),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 5.0),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.only(
-                                    top: 3.0,
-                                    bottom: 3.0,
-                                    left: 7.0,
-                                    right: 7.0),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    color: Colors.blue),
-                                child: const Text(
-                                  'Sudah',
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ],
             ),

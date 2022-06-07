@@ -11,6 +11,11 @@ class Searchtarif extends StatefulWidget {
 class _SearchtarifState extends State<Searchtarif> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    double WidthScreen = MediaQuery.of(context).size.width;
+    // ignore: non_constant_identifier_names
+    final double FontSizeText = (WidthScreen <= 320) ? 10 : 15;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -59,19 +64,21 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/lab.png'),
                                 semanticLabel: 'Tarif Laboratorium',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
-                                "Tarif Laboratorium",
+                                'Tarif Laboratorium',
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                  fontSize: FontSizeText,
+                                  color: Colors.black,
+                                ),
                               ),
                             ],
                           ),
@@ -102,19 +109,21 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/surgery.png'),
                                 semanticLabel: 'Paket Operasi',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
-                                "Paket Operasi",
+                                'Paket Operasi',
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                  fontSize: FontSizeText,
+                                  color: Colors.black,
+                                ),
                               ),
                             ],
                           ),
@@ -152,19 +161,21 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/radiologi.png'),
                                 semanticLabel: 'Tarif Radiologi',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
-                                "Tarif Radiologi",
+                                'Tarif Radiologi',
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                  fontSize: FontSizeText,
+                                  color: Colors.black,
+                                ),
                               ),
                             ],
                           ),
@@ -195,19 +206,19 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/bed.png'),
                                 semanticLabel: 'Tarif Kamar',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
                                 "Tarif Kamar",
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                    fontSize: FontSizeText, color: Colors.black),
                               ),
                             ],
                           ),
@@ -245,19 +256,19 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/kontak.png'),
                                 semanticLabel: 'Kontak',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
                                 "Kontak RS",
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                    fontSize: FontSizeText, color: Colors.black),
                               ),
                             ],
                           ),
@@ -288,19 +299,19 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/insurance.png'),
                                 semanticLabel: 'Asuransi',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
                                 "Asuransi",
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                    fontSize: FontSizeText, color: Colors.black),
                               ),
                             ],
                           ),
@@ -338,20 +349,20 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage(
                                     'assets/icon_fasilitas_kamar.png'),
                                 semanticLabel: 'Kamar Tersedia',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
                                 "Kamar Tersedia",
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                    fontSize: FontSizeText, color: Colors.black),
                               ),
                             ],
                           ),
@@ -382,19 +393,19 @@ class _SearchtarifState extends State<Searchtarif> {
                           padding:
                               const EdgeInsets.only(top: 10.0, bottom: 10.0),
                           child: Column(
-                            children: const [
-                              Image(
+                            children: [
+                              const Image(
                                 fit: BoxFit.fill,
                                 image: AssetImage('assets/bad.png'),
                                 semanticLabel: 'Pengaduan',
                               ),
-                              Padding(
+                              const Padding(
                                 padding: EdgeInsets.only(bottom: 10.0),
                               ),
                               Text(
                                 "Pengaduan",
                                 style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
+                                    fontSize: FontSizeText, color: Colors.black),
                               ),
                             ],
                           ),

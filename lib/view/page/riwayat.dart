@@ -10,6 +10,11 @@ class RiwayatPasien extends StatefulWidget {
 class _RiwayatPasienState extends State<RiwayatPasien> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    double WidthScreen = MediaQuery.of(context).size.width;
+    // ignore: non_constant_identifier_names
+    final double FontSizeText = (WidthScreen <= 320) ? 10 : 14;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -32,8 +37,11 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            padding:
-                const EdgeInsets.only(bottom: 20.0, left: 20.0, right: 20.0),
+            padding: const EdgeInsets.only(
+              bottom: 20.0,
+              left: 20.0,
+              right: 20.0,
+            ),
             child: Column(
               children: [
                 const Text(
@@ -53,46 +61,204 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("No. Reg"),
-                            Text("2022/05/30/00000001"),
+                            Text(
+                              "No. Reg",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            Text(
+                              "2022/05/30/00000001",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Tanggal"),
-                            Text("2022-05-23"),
+                            Text(
+                              "Tanggal",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            Text(
+                              "2022-05-23",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Poli"),
-                            Text("ANAK"),
+                            Text(
+                              "Poli",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(right: 25.0),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "ANAK",
+                                style: TextStyle(
+                                  fontSize: FontSizeText,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Jaminan"),
-                            Text("Umum"),
+                            Text(
+                              "Jaminan",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(right: 25.0),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "UMUM",
+                                style: TextStyle(
+                                  fontSize: FontSizeText,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
                           ],
                         ),
-                        Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("Dokter"),
-                            Text("dr. Andra Kurianto, Sp.A"),
+                            Text(
+                              "Dokter",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(right: 25.0),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "dr. Andra Kurianto, Sp.A",
+                                style: TextStyle(
+                                  fontSize: FontSizeText,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
                           ],
                         ),
                       ],
                     ),
                   ),
-                )
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 15.0),
+                ),
+                const Text(
+                  "Pemeriksaan",
+                  style: TextStyle(fontSize: 15),
+                ),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                      side: const BorderSide(color: Colors.blue)),
+                  child: Container(
+                    padding: const EdgeInsets.all(15.0),
+                    width: double.infinity,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("No. Reg"),
+                            Text("2022/05/30/00000001"),
+                          ],
+                        ),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Tanggal"),
+                            Text("2022-05-23"),
+                          ],
+                        ),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Poli"),
+                            Padding(
+                              padding: EdgeInsets.only(right: 25.0),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "ANAK",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Jaminan"),
+                            Padding(
+                              padding: EdgeInsets.only(right: 25.0),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "UMUM",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const Padding(padding: EdgeInsets.only(bottom: 5.0)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Dokter"),
+                            Padding(
+                              padding: EdgeInsets.only(right: 25.0),
+                            ),
+                            Flexible(
+                              child: Text(
+                                "dr. Andra Kurianto, Sp.A",
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

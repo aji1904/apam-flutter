@@ -13,6 +13,12 @@ class ProfileApp extends StatefulWidget {
 class _ProfileAppState extends State<ProfileApp> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    double WidthScreen = MediaQuery.of(context).size.width;
+    // ignore: non_constant_identifier_names
+    final double FontSizeText = (WidthScreen <= 320) ? 11 : 15;
+    final double FontSizeText2 = (WidthScreen <= 320) ? 12 : 16;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -44,7 +50,7 @@ class _ProfileAppState extends State<ProfileApp> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: const [
                                 Text(
-                                  "Aji Prasetyo",
+                                  "Aji Prasetyo Aji Prasetyo",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20.0,
@@ -96,8 +102,10 @@ class _ProfileAppState extends State<ProfileApp> {
                     Container(
                       padding: const EdgeInsets.all(5.0),
                       width: 95.0,
-                      child: ElevatedButton(
-                          style: const ButtonStyle(),
+                      child: OutlinedButton(
+                          style: ButtonStyle(
+                              side: MaterialStateProperty.all<BorderSide>(
+                                  const BorderSide(color: Colors.blue))),
                           onPressed: () {},
                           child: Row(
                             children: const [
@@ -126,76 +134,80 @@ class _ProfileAppState extends State<ProfileApp> {
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
                               "Tempat dan Tanggal Lahir",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.blue,
-                                  fontSize: 16),
+                                  fontSize: FontSizeText2),
                             ),
-                            Padding(padding: EdgeInsets.only(bottom: 8.0)),
+                            const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0)),
                             Text(
                               "Palembang, 19 April 1998",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.blue),
+                              style: TextStyle(
+                                  fontSize: FontSizeText, color: Colors.blue),
                             ),
                           ],
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 15.0)),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
                               "Jenis Kelamin",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.blue,
-                                  fontSize: 16),
+                                  fontSize: FontSizeText2),
                             ),
-                            Padding(padding: EdgeInsets.only(bottom: 8.0)),
+                            const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0)),
                             Text(
                               "Laki-Laki",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.blue),
+                              style: TextStyle(
+                                  fontSize: FontSizeText, color: Colors.blue),
                             ),
                           ],
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 15.0)),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
                               "Alamat",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.blue,
-                                  fontSize: 16),
+                                  fontSize: FontSizeText2),
                             ),
-                            Padding(padding: EdgeInsets.only(bottom: 8.0)),
+                            const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0)),
                             Text(
                               "Jln Sukarela Lrg Swadaya 2 Rt 43 Rw 07, Sukarami, Sukarami, Palembang",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.blue),
+                              style: TextStyle(
+                                  fontSize: FontSizeText, color: Colors.blue),
                             ),
                           ],
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 15.0)),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
                               "Kartu Identitas",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.blue,
-                                  fontSize: 16),
+                                  fontSize: FontSizeText2),
                             ),
-                            Padding(padding: EdgeInsets.only(bottom: 8.0)),
+                            const Padding(
+                                padding: EdgeInsets.only(bottom: 8.0)),
                             Text(
                               "1671071904980004",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.blue),
+                              style: TextStyle(
+                                  fontSize: FontSizeText, color: Colors.blue),
                             ),
                           ],
                         ),

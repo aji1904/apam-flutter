@@ -24,6 +24,15 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names
+    double WidthScreen = MediaQuery.of(context).size.width;
+    // ignore: non_constant_identifier_names
+    double FontSizeText = (WidthScreen <= 320) ? 8 : 11;
+    // ignore: non_constant_identifier_names
+    double FontSizeMandiri = (WidthScreen <= 320) ? 12 : 17;
+    // ignore: non_constant_identifier_names
+    double FontSizeMandiri2 = (WidthScreen <= 320) ? 10 : 13;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -91,30 +100,33 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
                               'Pendaftaran Mandiri',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: FontSizeMandiri,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.only(bottom: 10.0),
                             ),
                             Text(
                               'Silahkan Lakukan pendaftaran',
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.black),
+                              style: TextStyle(
+                                  fontSize: FontSizeMandiri2,
+                                  color: Colors.black),
                             ),
                             Text(
                               'Mandiri Rawat Jalan',
-                              style:
-                                  TextStyle(fontSize: 13, color: Colors.black),
+                              style: TextStyle(
+                                  fontSize: FontSizeMandiri2,
+                                  color: Colors.black),
                             ),
                           ],
                         ),
+                        const Padding(padding: EdgeInsets.only(right: 10.0)),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
@@ -140,9 +152,128 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 // Riwayat Perawatan
-                (MediaQuery.of(context).size.width <= 320
-                    ? MiniLayar(context)
-                    : FullLayar(context)),
+                Row(
+                  children: [
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: (() {
+                          setState(() {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Login(),
+                              ),
+                            );
+                          });
+                        }),
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                                side: const BorderSide(color: Colors.blue)),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                const Padding(
+                                    padding: EdgeInsets.only(top: 10.0)),
+                                const Image(
+                                  height: 70,
+                                  width: 70,
+                                  image: AssetImage('assets/rawat-jalan.png'),
+                                  semanticLabel: 'rawat jalan',
+                                ),
+                                const Padding(
+                                    padding: EdgeInsets.only(top: 10.0)),
+                                FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    'Rawat Jalan',
+                                    style: TextStyle(
+                                        fontSize: FontSizeMandiri,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                const Padding(
+                                    padding: EdgeInsets.only(top: 10.0)),
+                              ],
+                            ),
+                            Text(
+                              '100',
+                              style: TextStyle(
+                                fontSize: FontSizeMandiri,
+                                color: Colors.redAccent,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20.0),
+                    ),
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                                side: const BorderSide(color: Colors.blue)),
+                          ),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                const Padding(
+                                    padding: EdgeInsets.only(top: 10.0)),
+                                const Image(
+                                  height: 70,
+                                  width: 70,
+                                  image: AssetImage('assets/rawat-inap.png'),
+                                  semanticLabel: 'rawat inap',
+                                ),
+                                const Padding(
+                                    padding: EdgeInsets.only(top: 10.0)),
+                                FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    'Rawat Inap',
+                                    style: TextStyle(
+                                        fontSize: FontSizeMandiri,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                const Padding(
+                                    padding: EdgeInsets.only(top: 10.0)),
+                              ],
+                            ),
+                            Text(
+                              '100',
+                              style: TextStyle(
+                                fontSize: FontSizeMandiri,
+                                color: Colors.redAccent,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 // riwayat Perawatan
                 Container(
                   alignment: Alignment.topLeft,
@@ -174,19 +305,21 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.only(
                                   top: 10.0, bottom: 10.0),
                               child: Column(
-                                children: const [
-                                  Image(
+                                children: [
+                                  const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage('assets/icon_dokter.png'),
                                     semanticLabel: 'Jadwal Dokter',
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   Text(
                                     "Jadwal Dokter",
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 11, color: Colors.black),
+                                        fontSize: FontSizeText,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -212,20 +345,22 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.only(
                                   top: 10.0, bottom: 10.0),
                               child: Column(
-                                children: const [
-                                  Image(
+                                children: [
+                                  const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage(
                                         'assets/icon_fasilitas_kamar.png'),
                                     semanticLabel: 'Kamar',
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   Text(
                                     "Kamar Tersedia",
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 11, color: Colors.black),
+                                        fontSize: FontSizeText,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -251,19 +386,21 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.only(
                                   top: 10.0, bottom: 10.0),
                               child: Column(
-                                children: const [
-                                  Image(
+                                children: [
+                                  const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage('assets/icon_kamar.png'),
                                     semanticLabel: 'Fasilitas Kamar',
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   Text(
                                     "Fasilitas kamar",
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 11, color: Colors.black),
+                                        fontSize: FontSizeText,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -293,19 +430,20 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.only(
                                   top: 10.0, bottom: 10.0),
                               child: Column(
-                                children: const [
-                                  Image(
+                                children: [
+                                  const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage('assets/lab.png'),
                                     semanticLabel: 'Laboratorium',
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   Text(
                                     "Laboratorium",
                                     style: TextStyle(
-                                        fontSize: 11, color: Colors.black),
+                                        fontSize: FontSizeText,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -331,19 +469,20 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.only(
                                   top: 10.0, bottom: 10.0),
                               child: Column(
-                                children: const [
-                                  Image(
+                                children: [
+                                  const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage('assets/radiologi.png'),
                                     semanticLabel: 'Radiologi',
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   Text(
                                     "Radiologi",
                                     style: TextStyle(
-                                        fontSize: 11, color: Colors.black),
+                                        fontSize: FontSizeText,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -369,19 +508,20 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.only(
                                   top: 10.0, bottom: 10.0),
                               child: Column(
-                                children: const [
-                                  Image(
+                                children: [
+                                  const Image(
                                     fit: BoxFit.fill,
                                     image: AssetImage('assets/kontak.png'),
                                     semanticLabel: 'Kontak',
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10.0),
                                   ),
                                   Text(
                                     "Kontak",
                                     style: TextStyle(
-                                        fontSize: 11, color: Colors.black),
+                                        fontSize: FontSizeText,
+                                        color: Colors.black),
                                   ),
                                 ],
                               ),
@@ -444,233 +584,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-    );
-  }
-
-  Row MiniLayar(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: ElevatedButton(
-            onPressed: (() {
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Login(),
-                  ),
-                );
-              });
-            }),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.blue)),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: const [
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Image(
-                      height: 50,
-                      width: 50,
-                      image: AssetImage('assets/rawat-jalan.png'),
-                      semanticLabel: 'rawat jalan',
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        'Rawat Jalan',
-                        style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                  ],
-                ),
-                const Text(
-                  '100',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.redAccent,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-        ),
-        Expanded(
-          child: ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.blue)),
-              ),
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-            ),
-            onPressed: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: const [
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Image(
-                      height: 50,
-                      width: 50,
-                      image: AssetImage('assets/rawat-inap.png'),
-                      semanticLabel: 'rawat inap',
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Text(
-                      'Rawat Inap',
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                  ],
-                ),
-                const Text(
-                  '100',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.redAccent,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Row FullLayar(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: ElevatedButton(
-            onPressed: (() {
-              setState(() {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Login(),
-                  ),
-                );
-              });
-            }),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.blue)),
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: const [
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Image(
-                      height: 80,
-                      width: 80,
-                      image: AssetImage('assets/rawat-jalan.png'),
-                      semanticLabel: 'rawat jalan',
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        'Rawat Jalan',
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                  ],
-                ),
-                const Text(
-                  '100',
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.redAccent,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(left: 20.0),
-        ),
-        Expanded(
-          child: ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    side: const BorderSide(color: Colors.blue)),
-              ),
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-            ),
-            onPressed: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: const [
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    Image(
-                      height: 80,
-                      width: 80,
-                      image: AssetImage('assets/rawat-inap.png'),
-                      semanticLabel: 'rawat inap',
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        'Rawat Inap',
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(padding: EdgeInsets.only(top: 10.0)),
-                  ],
-                ),
-                const Text(
-                  '100',
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.redAccent,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
