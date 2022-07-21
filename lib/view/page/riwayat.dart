@@ -13,7 +13,7 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
     // ignore: non_constant_identifier_names
     double WidthScreen = MediaQuery.of(context).size.width;
     // ignore: non_constant_identifier_names
-    final double FontSizeText = (WidthScreen <= 320) ? 10 : 14;
+    final double FontSizeText = (WidthScreen <= 320) ? 12 : 14;
 
     return Scaffold(
       appBar: AppBar(
@@ -191,30 +191,58 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("No. Reg"),
-                            Text("2022/05/30/00000001"),
+                          children: [
+                            Text(
+                              "No. Reg",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            Text(
+                              "2022/05/30/00000001",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
                           ],
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Tanggal"),
-                            Text("2022-05-23"),
+                          children: [
+                            Text(
+                              "Tanggal",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            Text(
+                              "2022-05-23",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
                           ],
                         ),
                         const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Poli"),
-                            Padding(
+                          children: [
+                            Text(
+                              "Poli",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            const Padding(
                               padding: EdgeInsets.only(right: 25.0),
                             ),
                             Flexible(
                               child: Text(
                                 "ANAK",
+                                style: TextStyle(
+                                  fontSize: FontSizeText,
+                                ),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -224,14 +252,22 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
                         const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Jaminan"),
-                            Padding(
+                          children: [
+                            Text(
+                              "Jaminan",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            const Padding(
                               padding: EdgeInsets.only(right: 25.0),
                             ),
                             Flexible(
                               child: Text(
                                 "UMUM",
+                                style: TextStyle(
+                                  fontSize: FontSizeText,
+                                ),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -241,14 +277,22 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
                         const Padding(padding: EdgeInsets.only(bottom: 5.0)),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("Dokter"),
-                            Padding(
+                          children: [
+                            Text(
+                              "Dokter",
+                              style: TextStyle(
+                                fontSize: FontSizeText,
+                              ),
+                            ),
+                            const Padding(
                               padding: EdgeInsets.only(right: 25.0),
                             ),
                             Flexible(
                               child: Text(
                                 "dr. Andra Kurianto, Sp.A",
+                                style: TextStyle(
+                                  fontSize: FontSizeText,
+                                ),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                               ),
