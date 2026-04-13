@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/home/aji/Documents/GitHub/flutter/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/usr/bin/ninja",
+      "-C",
+      "/home/aji/Documents/GitHub/apam-flutter/android/app/.cxx/Debug/49633vg5/armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/usr/bin/ninja",
+    "-C",
+    "/home/aji/Documents/GitHub/apam-flutter/android/app/.cxx/Debug/49633vg5/armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

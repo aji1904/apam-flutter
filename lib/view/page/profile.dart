@@ -13,6 +13,9 @@ class ProfileApp extends StatefulWidget {
 class _ProfileAppState extends State<ProfileApp> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     // ignore: non_constant_identifier_names
     double WidthScreen = MediaQuery.of(context).size.width;
     // ignore: non_constant_identifier_names
@@ -25,11 +28,11 @@ class _ProfileAppState extends State<ProfileApp> {
           child: Column(
             children: [
               Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.bottomRight,
                     end: Alignment.topCenter,
-                    colors: [Colors.lightGreenAccent, Colors.greenAccent],
+                    colors: [colorScheme.primary, colorScheme.primaryContainer],
                   ),
                 ),
                 padding: const EdgeInsets.all(25.0),
@@ -48,28 +51,28 @@ class _ProfileAppState extends State<ProfileApp> {
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Aji Prasetyo Aji Prasetyo",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 20.0,
-                                      color: Colors.black),
+                                      color: colorScheme.onPrimary),
                                 ),
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsets.only(bottom: 10.0),
                                 ),
                                 Text(
                                   "123111123111123 (BPJS)",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: colorScheme.onPrimary,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                Padding(padding: EdgeInsets.only(bottom: 3.0)),
+                                const Padding(padding: EdgeInsets.only(bottom: 3.0)),
                                 Text(
                                   "001388 (Rekam Medis)",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: colorScheme.onPrimary,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ],
@@ -105,7 +108,7 @@ class _ProfileAppState extends State<ProfileApp> {
                       child: OutlinedButton(
                           style: ButtonStyle(
                               side: MaterialStateProperty.all<BorderSide>(
-                                  const BorderSide(color: Colors.blue))),
+                                  BorderSide(color: colorScheme.onPrimary))),
                           onPressed: () {},
                           child: Row(
                             children: const [
@@ -125,7 +128,7 @@ class _ProfileAppState extends State<ProfileApp> {
                 child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
-                      side: const BorderSide(color: Colors.blue)),
+                      side: BorderSide(color: colorScheme.outlineVariant)),
                   elevation: 4,
                   child: Container(
                     padding: const EdgeInsets.all(20.0),
@@ -139,7 +142,7 @@ class _ProfileAppState extends State<ProfileApp> {
                               "Tempat dan Tanggal Lahir",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue,
+                                  color: colorScheme.primary,
                                   fontSize: FontSizeText2),
                             ),
                             const Padding(
@@ -147,7 +150,7 @@ class _ProfileAppState extends State<ProfileApp> {
                             Text(
                               "Palembang, 19 April 1998",
                               style: TextStyle(
-                                  fontSize: FontSizeText, color: Colors.blue),
+                                  fontSize: FontSizeText, color: colorScheme.primary),
                             ),
                           ],
                         ),
@@ -229,7 +232,7 @@ class _ProfileAppState extends State<ProfileApp> {
                         ),
                       ),
                       side: MaterialStateProperty.all<BorderSide>(
-                        const BorderSide(color: Colors.blue),
+                        BorderSide(color: colorScheme.primary),
                       ),
                     ),
                     onPressed: () {},
@@ -237,15 +240,15 @@ class _ProfileAppState extends State<ProfileApp> {
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             "Panduan Aplikasi",
                             style: TextStyle(),
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(right: 10.0),
                           ),
-                          Icon(Icons.article_outlined),
+                          const Icon(Icons.article_outlined),
                         ],
                       ),
                     ),
@@ -264,7 +267,7 @@ class _ProfileAppState extends State<ProfileApp> {
                         ),
                       ),
                       side: MaterialStateProperty.all<BorderSide>(
-                        const BorderSide(color: Colors.blue),
+                        BorderSide(color: colorScheme.primary),
                       ),
                     ),
                     onPressed: () {
@@ -277,15 +280,15 @@ class _ProfileAppState extends State<ProfileApp> {
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             "Ubah Password",
                             style: TextStyle(),
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(right: 10.0),
                           ),
-                          Icon(Icons.key_outlined),
+                          const Icon(Icons.key_outlined),
                         ],
                       ),
                     ),
@@ -304,7 +307,7 @@ class _ProfileAppState extends State<ProfileApp> {
                         ),
                       ),
                       side: MaterialStateProperty.all<BorderSide>(
-                        const BorderSide(color: Colors.blue),
+                        BorderSide(color: colorScheme.primary),
                       ),
                     ),
                     onPressed: () {},
@@ -312,15 +315,15 @@ class _ProfileAppState extends State<ProfileApp> {
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             "About App",
                             style: TextStyle(),
                           ),
-                          Padding(
+                          const Padding(
                             padding: EdgeInsets.only(right: 10.0),
                           ),
-                          Icon(Icons.info),
+                          const Icon(Icons.info),
                         ],
                       ),
                     ),
@@ -340,7 +343,7 @@ class _ProfileAppState extends State<ProfileApp> {
                         ),
                       ),
                       side: MaterialStateProperty.all<BorderSide>(
-                        const BorderSide(color: Colors.blue),
+                        BorderSide(color: colorScheme.primary),
                       ),
                     ),
                     onPressed: () {
@@ -355,12 +358,15 @@ class _ProfileAppState extends State<ProfileApp> {
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text("Logout"),
-                          Padding(
+                        children: [
+                          const Text(
+                            "Logout",
+                            style: TextStyle(),
+                          ),
+                          const Padding(
                             padding: EdgeInsets.only(right: 10.0),
                           ),
-                          Icon(Icons.exit_to_app_outlined),
+                          const Icon(Icons.exit_to_app_outlined),
                         ],
                       ),
                     ),

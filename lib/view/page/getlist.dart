@@ -12,18 +12,21 @@ class _GetListDataState extends State<GetListData> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Paket Operasi",
           style: TextStyle(
-            color: Colors.blue,
+            color: colorScheme.primary,
           ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.blue),
+        iconTheme: IconThemeData(color: colorScheme.primary),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -60,7 +63,7 @@ class _GetListDataState extends State<GetListData> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.green),
+                      border: Border.all(color: colorScheme.outlineVariant),
                       borderRadius: const BorderRadius.all(
                         Radius.circular(15.0),
                       ),
@@ -79,14 +82,14 @@ class _GetListDataState extends State<GetListData> {
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
-                                  "Operasi Kandungan Normal Kelas 1",
-                                  style: TextStyle(
-                                    color: Colors.black,
+                                children: [
+                                  Text(
+                                    "Operasi Kandungan Normal Kelas 1",
+                                    style: TextStyle(
+                                      color: colorScheme.onSurface,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
                             ),
                           ),
                         ),
@@ -95,9 +98,13 @@ class _GetListDataState extends State<GetListData> {
                           child: Container(
                             padding: const EdgeInsets.all(5.0),
                             decoration: BoxDecoration(
-                                color: Colors.greenAccent,
+                                color: colorScheme.primaryContainer,
                                 borderRadius: BorderRadius.circular(10.0)),
-                            child: const Text("Rp. 5,2 Juta"),
+                            child: Text(
+                              "Rp. 5,2 Juta",
+                              style: TextStyle(
+                                  color: colorScheme.onPrimaryContainer),
+                            ),
                           ),
                         ),
                       ],
@@ -106,7 +113,7 @@ class _GetListDataState extends State<GetListData> {
                   const Padding(padding: EdgeInsets.only(bottom: 10.0)),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.green),
+                      border: Border.all(color: colorScheme.outlineVariant),
                       borderRadius: const BorderRadius.all(
                         Radius.circular(15.0),
                       ),
@@ -125,14 +132,14 @@ class _GetListDataState extends State<GetListData> {
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
-                                  "Operasi Kandungan Normal Kelas 2",
-                                  style: TextStyle(
-                                    color: Colors.black,
+                                children: [
+                                  Text(
+                                    "Operasi Kandungan Normal Kelas 2",
+                                    style: TextStyle(
+                                      color: colorScheme.onSurface,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
                             ),
                           ),
                         ),
@@ -141,9 +148,13 @@ class _GetListDataState extends State<GetListData> {
                           child: Container(
                             padding: const EdgeInsets.all(5.0),
                             decoration: BoxDecoration(
-                                color: Colors.greenAccent,
+                                color: colorScheme.primaryContainer,
                                 borderRadius: BorderRadius.circular(10.0)),
-                            child: const Text("Rp. 560 Ribu"),
+                            child: Text(
+                              "Rp. 560 Ribu",
+                              style: TextStyle(
+                                  color: colorScheme.onPrimaryContainer),
+                            ),
                           ),
                         ),
                       ],

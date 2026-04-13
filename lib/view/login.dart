@@ -15,18 +15,21 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Log in",
           style: TextStyle(
-            color: Colors.blue,
+            color: colorScheme.primary,
           ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.blue),
+        iconTheme: IconThemeData(color: colorScheme.primary),
         leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -51,10 +54,10 @@ class _LoginState extends State<Login> {
                   const Padding(
                     padding: EdgeInsets.only(top: 20.0),
                   ),
-                  const Text(
+                  Text(
                     "RS Bunda Medika Jakabaring",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.green),
+                    style: TextStyle(fontSize: 25.0, color: colorScheme.primary),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(bottom: 30.0),

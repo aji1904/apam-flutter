@@ -11,6 +11,9 @@ class Searchtarif extends StatefulWidget {
 class _SearchtarifState extends State<Searchtarif> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     // ignore: non_constant_identifier_names
     double WidthScreen = MediaQuery.of(context).size.width;
     // ignore: non_constant_identifier_names
@@ -27,14 +30,15 @@ class _SearchtarifState extends State<Searchtarif> {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.greenAccent),
+                      color: colorScheme.primaryContainer),
                   padding: const EdgeInsets.all(10.0),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "Informasi Rumah Sakit",
+                      "Informasi Tarif",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15.0,
+                        color: colorScheme.onPrimaryContainer,
                       ),
                     ),
                   ),
@@ -55,10 +59,10 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -77,7 +81,7 @@ class _SearchtarifState extends State<Searchtarif> {
                                 'Tarif Laboratorium',
                                 style: TextStyle(
                                   fontSize: FontSizeText,
-                                  color: Colors.black,
+                                  color: colorScheme.onSurface,
                                 ),
                               ),
                             ],
@@ -100,10 +104,10 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -122,7 +126,7 @@ class _SearchtarifState extends State<Searchtarif> {
                                 'Paket Operasi',
                                 style: TextStyle(
                                   fontSize: FontSizeText,
-                                  color: Colors.black,
+                                  color: colorScheme.onSurface,
                                 ),
                               ),
                             ],
@@ -149,13 +153,13 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
-                              side: const BorderSide(
-                                color: Colors.blue,
+                              side: BorderSide(
+                                color: colorScheme.outlineVariant,
                               ),
                             ),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -174,7 +178,7 @@ class _SearchtarifState extends State<Searchtarif> {
                                 'Tarif Radiologi',
                                 style: TextStyle(
                                   fontSize: FontSizeText,
-                                  color: Colors.black,
+                                  color: colorScheme.onSurface,
                                 ),
                               ),
                             ],
@@ -197,10 +201,10 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -218,7 +222,7 @@ class _SearchtarifState extends State<Searchtarif> {
                               Text(
                                 "Tarif Kamar",
                                 style: TextStyle(
-                                    fontSize: FontSizeText, color: Colors.black),
+                                    fontSize: FontSizeText, color: colorScheme.onSurface),
                               ),
                             ],
                           ),
@@ -244,13 +248,13 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
-                              side: const BorderSide(
-                                color: Colors.blue,
+                              side: BorderSide(
+                                color: colorScheme.outlineVariant,
                               ),
                             ),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -268,7 +272,7 @@ class _SearchtarifState extends State<Searchtarif> {
                               Text(
                                 "Kontak RS",
                                 style: TextStyle(
-                                    fontSize: FontSizeText, color: Colors.black),
+                                    fontSize: FontSizeText, color: colorScheme.onSurface),
                               ),
                             ],
                           ),
@@ -290,10 +294,10 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -311,7 +315,7 @@ class _SearchtarifState extends State<Searchtarif> {
                               Text(
                                 "Asuransi",
                                 style: TextStyle(
-                                    fontSize: FontSizeText, color: Colors.black),
+                                    fontSize: FontSizeText, color: colorScheme.onSurface),
                               ),
                             ],
                           ),
@@ -337,8 +341,8 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20.0),
-                              side: const BorderSide(
-                                color: Colors.blue,
+                              side: BorderSide(
+                                color: colorScheme.outlineVariant,
                               ),
                             ),
                           ),
@@ -362,7 +366,7 @@ class _SearchtarifState extends State<Searchtarif> {
                               Text(
                                 "Kamar Tersedia",
                                 style: TextStyle(
-                                    fontSize: FontSizeText, color: Colors.black),
+                                    fontSize: FontSizeText, color: colorScheme.onSurface),
                               ),
                             ],
                           ),
@@ -384,10 +388,10 @@ class _SearchtarifState extends State<Searchtarif> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         child: Padding(
                           padding:
@@ -405,7 +409,7 @@ class _SearchtarifState extends State<Searchtarif> {
                               Text(
                                 "Pengaduan",
                                 style: TextStyle(
-                                    fontSize: FontSizeText, color: Colors.black),
+                                    fontSize: FontSizeText, color: colorScheme.onSurface),
                               ),
                             ],
                           ),

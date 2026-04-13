@@ -10,6 +10,9 @@ class RiwayatPasien extends StatefulWidget {
 class _RiwayatPasienState extends State<RiwayatPasien> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     // ignore: non_constant_identifier_names
     double WidthScreen = MediaQuery.of(context).size.width;
     // ignore: non_constant_identifier_names
@@ -18,15 +21,15 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Riwayat Berobat",
           style: TextStyle(
-            color: Colors.blue,
+            color: colorScheme.primary,
           ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.blue),
+        iconTheme: IconThemeData(color: colorScheme.primary),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -52,7 +55,7 @@ class _RiwayatPasienState extends State<RiwayatPasien> {
                   elevation: 2,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
-                      side: const BorderSide(color: Colors.blue)),
+                      side: BorderSide(color: colorScheme.outlineVariant)),
                   child: Container(
                     padding: const EdgeInsets.all(15.0),
                     width: double.infinity,

@@ -36,8 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_nav_bar: ^5.0.6
   line_icons: ^2.0.1
-  badges: ^2.0.2
-  carousel_slider: ^4.1.1
+  badges: ^3.1.2
+  carousel_slider: ^5.0.0
   qr_flutter: ^4.0.0
   animated_splash_screen: ^1.2.0
 

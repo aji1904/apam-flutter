@@ -11,18 +11,21 @@ class Forgotpassword extends StatefulWidget {
 class _ForgotpasswordState extends State<Forgotpassword> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Forgot Password",
           style: TextStyle(
-            color: Colors.blue,
+            color: colorScheme.primary,
           ),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.blue),
+        iconTheme: IconThemeData(color: colorScheme.primary),
         leading: IconButton(
           onPressed: () {
             Navigator.push(

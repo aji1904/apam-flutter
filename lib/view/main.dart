@@ -12,6 +12,9 @@ class Mainpage extends StatefulWidget {
 class _MainpageState extends State<Mainpage> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -25,10 +28,10 @@ class _MainpageState extends State<Mainpage> {
                   const Padding(
                     padding: EdgeInsets.only(top: 20.0),
                   ),
-                  const Text(
+                  Text(
                     "RS Bunda Medika Jakabaring",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.green),
+                    style: TextStyle(fontSize: 25.0, color: colorScheme.primary),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(bottom: 100.0),
@@ -72,7 +75,7 @@ class _MainpageState extends State<Mainpage> {
                           const StadiumBorder(),
                         ),
                         side: MaterialStateProperty.all<BorderSide>(
-                            const BorderSide(color: Colors.blue))),
+                            BorderSide(color: colorScheme.primary))),
                     onPressed: (() {
                       Navigator.push(
                         context,

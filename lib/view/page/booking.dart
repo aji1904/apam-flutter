@@ -7,10 +7,12 @@ class BookingApp extends StatefulWidget {
   @override
   State<BookingApp> createState() => _BookingAppState();
 }
-
 class _BookingAppState extends State<BookingApp> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     // ignore: non_constant_identifier_names
     double WidthScreen = MediaQuery.of(context).size.width;
     // ignore: non_constant_identifier_names
@@ -30,14 +32,15 @@ class _BookingAppState extends State<BookingApp> {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.greenAccent),
+                      color: colorScheme.primaryContainer),
                   padding: const EdgeInsets.all(10.0),
-                  child: const Center(
+                  child: Center(
                     child: Text(
                       "Pendaftaran Online",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15.0,
+                        color: colorScheme.onPrimaryContainer,
                       ),
                     ),
                   ),
@@ -46,12 +49,12 @@ class _BookingAppState extends State<BookingApp> {
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                      Colors.greenAccent,
+                      colorScheme.primaryContainer,
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
-                          side: const BorderSide(color: Colors.blue)),
+                          side: BorderSide(color: colorScheme.outlineVariant)),
                     ),
                   ),
                   onPressed: () {
@@ -71,14 +74,15 @@ class _BookingAppState extends State<BookingApp> {
                               'POLIKLINIK ANAK',
                               style: TextStyle(
                                 fontSize: FontSizeText,
-                                color: Colors.black,
+                                color: colorScheme.onPrimaryContainer,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               'BPJS KESEHATAN',
                               style: TextStyle(
-                                  fontSize: FontSizeText, color: Colors.black),
+                                  fontSize: FontSizeText,
+                                  color: colorScheme.onPrimaryContainer),
                             ),
                             const Padding(
                               padding: EdgeInsets.only(bottom: 5.0),
@@ -88,13 +92,13 @@ class _BookingAppState extends State<BookingApp> {
                                   top: 3.0, bottom: 3.0, left: 7.0, right: 7.0),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  color: Colors.lightBlueAccent),
+                                  color: colorScheme.secondaryContainer),
                               child: Text(
                                 'dr. Andra Kurniato, Sp. A',
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontSize: FontSizeText,
-                                  color: Colors.black,
+                                  color: colorScheme.onSecondaryContainer,
                                 ),
                               ),
                             ),
@@ -129,12 +133,12 @@ class _BookingAppState extends State<BookingApp> {
                                     right: 7.0),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10.0),
-                                    color: Colors.blueGrey),
+                                    color: colorScheme.tertiaryContainer),
                                 child: Text(
                                   'Belum',
                                   style: TextStyle(
                                     fontSize: FontSizeText,
-                                    color: Colors.white,
+                                    color: colorScheme.onTertiaryContainer,
                                   ),
                                 ),
                               ),

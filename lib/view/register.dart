@@ -14,17 +14,20 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Register", style: TextStyle(color: Colors.blue)),
+        title: Text("Register", style: TextStyle(color: colorScheme.primary)),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
+        iconTheme: IconThemeData(color: colorScheme.primary),
         leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            color: Colors.blue,
             icon: const Icon(Icons.arrow_back_ios)),
       ),
       body: SafeArea(
@@ -39,10 +42,10 @@ class _RegisterState extends State<Register> {
                   const Padding(
                     padding: EdgeInsets.only(top: 20.0),
                   ),
-                  const Text(
+                  Text(
                     "RS Bunda Medika Jakabaring",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.green),
+                    style: TextStyle(fontSize: 25.0, color: colorScheme.primary),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(bottom: 30.0),

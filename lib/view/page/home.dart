@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:badges/badges.dart';
-import 'package:flutter/material.dart';
+import 'package:badges/badges.dart' as badges;
+import 'package:flutter/material.dart' hide CarouselController, Badge;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:app/view/login.dart';
 
@@ -24,6 +24,9 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     // ignore: non_constant_identifier_names
     double WidthScreen = MediaQuery.of(context).size.width;
     // ignore: non_constant_identifier_names
@@ -48,16 +51,21 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Bunda Medika Jakabaring",
-                      style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.teal),
+                    Expanded(
+                      child: Text(
+                        "Bunda Medika Jakabaring",
+                        style: TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            color: colorScheme.primary),
+                      ),
                     ),
-                    Badge(
-                      position: BadgePosition.topEnd(end: 3, top: 2),
-                      animationType: BadgeAnimationType.scale,
+                    badges.Badge(
+                      badgeStyle: const badges.BadgeStyle(
+                        badgeColor: Colors.red,
+                      ),
+                      position: badges.BadgePosition.topEnd(end: 3, top: 2),
+                      badgeAnimation: const badges.BadgeAnimation.scale(),
                       badgeContent: const Text(
                         "3",
                         style: TextStyle(color: Colors.white),
@@ -72,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           );
                         },
-                        color: Colors.teal,
+                        color: colorScheme.primary,
                       ),
                     ),
                   ],
@@ -83,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                      Colors.greenAccent,
+                      colorScheme.primaryContainer,
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -98,33 +106,35 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(10.0),
                     child: Row(
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Pendaftaran Mandiri',
-                              style: TextStyle(
-                                fontSize: FontSizeMandiri,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Pendaftaran Mandiri',
+                                style: TextStyle(
+                                  fontSize: FontSizeMandiri,
+                                  color: colorScheme.onPrimaryContainer,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(bottom: 10.0),
-                            ),
-                            Text(
-                              'Silahkan Lakukan pendaftaran',
-                              style: TextStyle(
-                                  fontSize: FontSizeMandiri2,
-                                  color: Colors.black),
-                            ),
-                            Text(
-                              'Mandiri Rawat Jalan',
-                              style: TextStyle(
-                                  fontSize: FontSizeMandiri2,
-                                  color: Colors.black),
-                            ),
-                          ],
+                              const Padding(
+                                padding: EdgeInsets.only(bottom: 10.0),
+                              ),
+                              Text(
+                                'Silahkan Lakukan pendaftaran',
+                                style: TextStyle(
+                                    fontSize: FontSizeMandiri2,
+                                    color: colorScheme.onPrimaryContainer),
+                              ),
+                              Text(
+                                'Mandiri Rawat Jalan',
+                                style: TextStyle(
+                                    fontSize: FontSizeMandiri2,
+                                    color: colorScheme.onPrimaryContainer),
+                              ),
+                            ],
+                          ),
                         ),
                         const Padding(padding: EdgeInsets.only(right: 10.0)),
                         Expanded(
@@ -168,42 +178,44 @@ class _HomePageState extends State<HomePage> {
                         }),
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                const Padding(
-                                    padding: EdgeInsets.only(top: 10.0)),
-                                const Image(
-                                  height: 70,
-                                  width: 70,
-                                  image: AssetImage('assets/rawat-jalan.png'),
-                                  semanticLabel: 'rawat jalan',
-                                ),
-                                const Padding(
-                                    padding: EdgeInsets.only(top: 10.0)),
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    'Rawat Jalan',
-                                    style: TextStyle(
-                                        fontSize: FontSizeMandiri,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Padding(
+                                      padding: EdgeInsets.only(top: 10.0)),
+                                  const Image(
+                                    height: 70,
+                                    width: 70,
+                                    image: AssetImage('assets/rawat-jalan.png'),
+                                    semanticLabel: 'rawat jalan',
                                   ),
-                                ),
-                                const Padding(
-                                    padding: EdgeInsets.only(top: 10.0)),
-                              ],
+                                  const Padding(
+                                      padding: EdgeInsets.only(top: 10.0)),
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      'Rawat Jalan',
+                                      style: TextStyle(
+                                          fontSize: FontSizeMandiri,
+                                          color: colorScheme.onSurface,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  const Padding(
+                                      padding: EdgeInsets.only(top: 10.0)),
+                                ],
+                              ),
                             ),
                             Text(
                               '100',
@@ -226,40 +238,42 @@ class _HomePageState extends State<HomePage> {
                               MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20.0),
-                                side: const BorderSide(color: Colors.blue)),
+                                side: BorderSide(color: colorScheme.outlineVariant)),
                           ),
                           backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                              MaterialStateProperty.all<Color>(colorScheme.surface),
                         ),
                         onPressed: () {},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              children: [
-                                const Padding(
-                                    padding: EdgeInsets.only(top: 10.0)),
-                                const Image(
-                                  height: 70,
-                                  width: 70,
-                                  image: AssetImage('assets/rawat-inap.png'),
-                                  semanticLabel: 'rawat inap',
-                                ),
-                                const Padding(
-                                    padding: EdgeInsets.only(top: 10.0)),
-                                FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    'Rawat Inap',
-                                    style: TextStyle(
-                                        fontSize: FontSizeMandiri,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
+                            Expanded(
+                              child: Column(
+                                children: [
+                                  const Padding(
+                                      padding: EdgeInsets.only(top: 10.0)),
+                                  const Image(
+                                    height: 70,
+                                    width: 70,
+                                    image: AssetImage('assets/rawat-inap.png'),
+                                    semanticLabel: 'rawat inap',
                                   ),
-                                ),
-                                const Padding(
-                                    padding: EdgeInsets.only(top: 10.0)),
-                              ],
+                                  const Padding(
+                                      padding: EdgeInsets.only(top: 10.0)),
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      'Rawat Inap',
+                                      style: TextStyle(
+                                          fontSize: FontSizeMandiri,
+                                          color: colorScheme.onSurface,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  const Padding(
+                                      padding: EdgeInsets.only(top: 10.0)),
+                                ],
+                              ),
                             ),
                             Text(
                               '100',
@@ -288,7 +302,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Row(
                       children: [
-                        Flexible(
+                        Expanded(
                           child: ElevatedButton(
                             onPressed: (() {}),
                             style: ButtonStyle(
@@ -296,10 +310,10 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side: const BorderSide(color: Colors.blue)),
+                                    side: BorderSide(color: colorScheme.outlineVariant)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                                  colorScheme.surface),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -319,16 +333,15 @@ class _HomePageState extends State<HomePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: FontSizeText,
-                                        color: Colors.black),
+                                        color: colorScheme.onSurface),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          flex: 2,
                         ),
-                        const Padding(padding: EdgeInsets.only(left: 10.0)),
-                        Flexible(
+                        const SizedBox(width: 10.0),
+                        Expanded(
                           child: ElevatedButton(
                             onPressed: (() {}),
                             style: ButtonStyle(
@@ -336,10 +349,10 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side: const BorderSide(color: Colors.blue)),
+                                    side: BorderSide(color: colorScheme.outlineVariant)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                                  colorScheme.surface),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -360,16 +373,15 @@ class _HomePageState extends State<HomePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: FontSizeText,
-                                        color: Colors.black),
+                                        color: colorScheme.onSurface),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          flex: 2,
                         ),
-                        const Padding(padding: EdgeInsets.only(right: 10.0)),
-                        Flexible(
+                        const SizedBox(width: 10.0),
+                        Expanded(
                           child: ElevatedButton(
                             onPressed: (() {}),
                             style: ButtonStyle(
@@ -377,10 +389,10 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side: const BorderSide(color: Colors.blue)),
+                                    side: BorderSide(color: colorScheme.outlineVariant)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                                  colorScheme.surface),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -400,20 +412,19 @@ class _HomePageState extends State<HomePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: FontSizeText,
-                                        color: Colors.black),
+                                        color: colorScheme.onSurface),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          flex: 2,
                         ),
                       ],
                     ),
                     const Padding(padding: EdgeInsets.only(top: 10.0)),
                     Row(
                       children: [
-                        Flexible(
+                        Expanded(
                           child: ElevatedButton(
                             onPressed: (() {}),
                             style: ButtonStyle(
@@ -421,10 +432,10 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side: const BorderSide(color: Colors.blue)),
+                                    side: BorderSide(color: colorScheme.outlineVariant)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                                  colorScheme.surface),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -443,16 +454,15 @@ class _HomePageState extends State<HomePage> {
                                     "Laboratorium",
                                     style: TextStyle(
                                         fontSize: FontSizeText,
-                                        color: Colors.black),
+                                        color: colorScheme.onSurface),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          flex: 2,
                         ),
-                        const Padding(padding: EdgeInsets.only(left: 10.0)),
-                        Flexible(
+                        const SizedBox(width: 10.0),
+                        Expanded(
                           child: ElevatedButton(
                             onPressed: (() {}),
                             style: ButtonStyle(
@@ -460,10 +470,10 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side: const BorderSide(color: Colors.blue)),
+                                    side: BorderSide(color: colorScheme.outlineVariant)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                                  colorScheme.surface),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -482,16 +492,15 @@ class _HomePageState extends State<HomePage> {
                                     "Radiologi",
                                     style: TextStyle(
                                         fontSize: FontSizeText,
-                                        color: Colors.black),
+                                        color: colorScheme.onSurface),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          flex: 2,
                         ),
-                        const Padding(padding: EdgeInsets.only(right: 10.0)),
-                        Flexible(
+                        const SizedBox(width: 10.0),
+                        Expanded(
                           child: ElevatedButton(
                             onPressed: (() {}),
                             style: ButtonStyle(
@@ -499,10 +508,10 @@ class _HomePageState extends State<HomePage> {
                                   RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20.0),
-                                    side: const BorderSide(color: Colors.blue)),
+                                    side: BorderSide(color: colorScheme.outlineVariant)),
                               ),
                               backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.white),
+                                  colorScheme.surface),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.only(
@@ -521,13 +530,12 @@ class _HomePageState extends State<HomePage> {
                                     "Kontak",
                                     style: TextStyle(
                                         fontSize: FontSizeText,
-                                        color: Colors.black),
+                                        color: colorScheme.onSurface),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-                          flex: 2,
                         ),
                       ],
                     ),
@@ -561,18 +569,19 @@ class _HomePageState extends State<HomePage> {
                     return Builder(
                       builder: (BuildContext context) {
                         return Container(
-                          width: MediaQuery.of(context).size.width,
+                          // Removed fixed width: MediaQuery.of(context).size.width to prevent overflow
                           margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(10.0),
                             ),
-                            color: Color.fromRGBO(76, 217, 116, 1),
+                            color: colorScheme.primaryContainer,
                             boxShadow: ShadowBox,
                           ),
                           child: Text(
                             'text $i',
-                            style: const TextStyle(fontSize: 16.0),
+                            style: TextStyle(
+                                fontSize: 16.0, color: colorScheme.onPrimaryContainer),
                           ),
                         );
                       },
